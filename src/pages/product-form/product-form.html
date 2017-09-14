@@ -68,7 +68,7 @@
     <ion-item>
       <ion-label floating>Shop</ion-label>
       <ion-select [(ngModel)]="productForm.shop">
-        <ion-option *ngFor="let shop of listShopData.items" [value]="shop">{{shop.name}}</ion-option>
+        <ion-option *ngFor="let shop of shopData.shops" [value]="shop">{{shop.name}}</ion-option>
       </ion-select>
     </ion-item>
 
