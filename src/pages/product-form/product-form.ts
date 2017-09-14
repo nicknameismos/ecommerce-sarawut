@@ -5,6 +5,8 @@ import { ProductFormServiceProvider } from "./product-form-service";
 import { Category, Shipping } from "../../app/app.model";
 import { ListShopModel } from "../list-shop/list-shop.model";
 import { ListShopServiceProvider } from "../list-shop/list-shop.service";
+import { AuthorizeProvider } from "../../providers/authorize/authorize";
+import { AuthorizeModel } from "../../providers/authorize/authorize.model";
 
 /**
  * Generated class for the ProductFormPage page.
@@ -18,11 +20,12 @@ import { ListShopServiceProvider } from "../list-shop/list-shop.service";
   templateUrl: 'product-form.html',
 })
 export class ProductFormPage {
+  images: Array<any> = [];
   shippings: Array<Shipping> = [];
   categories: Array<Category> = [];
   productForm: ProductModel = new ProductModel();
-  listShopData: ListShopModel = new ListShopModel();
   image: string;
+  shopData: AuthorizeModel = new AuthorizeModel();
   locations: any = [{
     id: 1,
     name: 'one'
@@ -31,12 +34,14 @@ export class ProductFormPage {
     id: 2,
     name: 'two'
   }];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public productFormServiceProvider: ProductFormServiceProvider, public listShopService: 
-    ListShopServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public productFormServiceProvider: ProductFormServiceProvider, public listShopService:
+    ListShopServiceProvider, public authorizeProvider: AuthorizeProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductFormPage');
+    this.shopData = this.authorizeProvider.getAuthorization();
+    console.log(this.shopData);
     this.productFormServiceProvider.getCategories().then(data => {
       this.categories = data;
     }, (err) => {
@@ -47,25 +52,36 @@ export class ProductFormPage {
     }, (err) => {
       console.log(err);
     });
-    this.listShopService.getListShop().then((data) => {
-      this.listShopData = data;
-    }, (err) => {
-      console.log(err);      
-    });
   }
 
   createProduct() {
-    console.log(this.productForm);
-    this.viewCtrl.dismiss({ data: this.productForm });
+    this.productFormServiceProvider.uploadImage(this.images).then(data => {
+      // alert('image' + JSON.stringify(data));
+      let images = [];
+      for (let i = 0; i < data.length; i++) {
+        images.push(data[i].imgURL);
+      }
+      this.productForm.images = images.length > 0 ? images : [];
+      this.viewCtrl.dismiss({ data: this.productForm });
+      // alert('data' + data);
+    })
+    // console.log(this.productForm);
+    // this.viewCtrl.dismiss({ data: this.productForm });
+
+
   }
 
-  addImage() {
-    this.productForm.images.push(this.image);
-    this.image = "";
-  }
+  // addImage() {
+  //   this.productForm.images.push(this.image);
+  //   this.image = "";
+  // }
 
   closeModal() {
     this.viewCtrl.dismiss();
+  }
+
+  uploadImage(e) {
+    this.images = e;
   }
 
 }

@@ -27,7 +27,7 @@ export class MyApp {
   // make WalkthroughPage the root (or first) page
   //rootPage: any = WalkthroughPage;
   // rootPage: any = FunctionalitiesPage;
-  rootPage: any = TabsNavigationPage;
+  rootPage: any = LoginPage;
   //rootPage: any = ProductDetailPage;
   textDir: string = "ltr";
 

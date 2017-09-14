@@ -1,0 +1,32 @@
+images-layout-upload-x {
+    $categories-horizontal-list-padding: 10px;
+    .horizontal-categories {
+        border-bottom: 10px solid $white-a;
+        @include element-shadow();
+        padding-bottom: 16px;
+        .scroll-content {
+            position: relative;
+            contain: style layout;
+        }
+        preload-image {
+            img {
+                z-index: -3;
+            }
+        }
+        .categories-row {
+            @include flex-wrap(nowrap);
+            &::after {
+                content: '';
+                flex: 0 0 $categories-horizontal-list-padding;
+                max-width: $categories-horizontal-list-padding;
+            }
+        }
+        .horizontal-item {
+            padding: 0px 0px 0px $categories-horizontal-list-padding;
+        }
+        .add-img {
+            width: 76px;
+            margin-left: 10px;
+        }
+    }
+}

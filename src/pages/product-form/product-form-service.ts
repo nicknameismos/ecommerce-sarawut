@@ -40,6 +40,14 @@ export class ProductFormServiceProvider {
       .catch(this.handleError);
   }
 
+  uploadImage(imgs): Promise<any> {
+    //return this.http.get(Constants.URL + '/api/shopmasters')
+    return this.http.post('https://cloudinary01.herokuapp.com/api/upload-images', { imgs: imgs })
+      .toPromise()
+      .then(response => response.json() as any)
+      .catch(this.handleError);
+  }
+
   
   private handleError(error: any): Promise<any> {
     this.log.errorService('An error occurred', error); // for demo purposes only

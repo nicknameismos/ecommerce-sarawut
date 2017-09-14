@@ -31,6 +31,15 @@ list-items {
     .text-decoration {
         text-decoration: line-through;
     }
+    .text-non-price {
+        font-size: 12px;                
+        min-height: 15px; 
+        color: grey;
+                   
+    }
+    .text-show-price {
+        font-weight: bold;                   
+    }
     .filter-bar{
         background-color: #fff;
         margin-bottom: 6px;

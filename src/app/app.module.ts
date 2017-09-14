@@ -132,6 +132,9 @@ import { ProductFormServiceProvider } from "../pages/product-form/product-form-s
 import { FormAddressPage } from '../pages/form-address/form-address';
 import { OrderPage } from '../pages/order/order';
 import { NotificationPage } from '../pages/notification/notification';
+import { ImagesLayoutUploadXComponent } from '../components/images-layout-upload-x/images-layout-upload-x';
+import { ShopFormServiceProvider } from '../pages/shop-form/shop-form.service';
+import { Base64 } from '@ionic-native/base64';
 
 import { OrderServiceProvider } from '../pages/order/order.service';
 import { IonOrdersComponent } from '../components/ion-orders/ion-orders';
@@ -215,6 +218,7 @@ export function createTranslateLoader(http: Http) {
     FormAddressPage,
     OrderPage,
     NotificationPage,
+    ImagesLayoutUploadXComponent,
     IonOrdersComponent,
     SegmentOrderComponent,
     ListOrderComponent,
@@ -312,6 +316,8 @@ export function createTranslateLoader(http: Http) {
     PolicyServiceProvider,
     HelpServiceProvider,
     ProductFormServiceProvider,
+    ShopFormServiceProvider,
+    Base64,
     OrderServiceProvider,
     OrderdetailserviceProvider,
     NotificationserviceProvider

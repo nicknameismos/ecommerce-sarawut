@@ -6,48 +6,52 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Shop Form</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only color="royal" (click)="dismiss()">
+    <ion-navbar>
+        <ion-title>{{'SHOP_FORM' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="dismiss()">
           <ion-icon name="ios-close-circle-outline"></ion-icon>
         </button>
-    </ion-buttons>
-  </ion-navbar>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <form (ngSubmit)="logForm()">
-    <ion-item>
-      <ion-label>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.name" name="Name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Detail</ion-label>
-      <ion-textarea [(ngModel)]="shop.detail" name="Detail"></ion-textarea>
-    </ion-item>
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.email" name="Email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Image</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.image" name="Image"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tel</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.tel" name="Tel"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Lat</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.map.lat" name="Map Lat"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Long</ion-label>
-      <ion-input type="text" [(ngModel)]="shop.map.long" name="Map Long"></ion-input>
-    </ion-item>
-    <button ion-button type="submit" block>Add Shop</button>
-  </form>
+    <form (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label floating>{{'NAME_SHOP' | translate}}</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.name" name="Name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{'DETAIL' | translate}}</ion-label>
+            <ion-textarea [(ngModel)]="shop.detail" name="Detail"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{'EMAIL_SHOP' | translate}}</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.email" name="Email"></ion-input>
+        </ion-item>
+        <!-- <ion-item>
+            <ion-label>Image</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.image" name="Image"></ion-input>
+        </ion-item>
+        <images-layout-upload-x [maxImage]="5" (imageOutList)="uploadImage($event)"></images-layout-upload-x> -->
+
+        <ion-item>
+            <ion-label floating>{{'TEL_SHOP' | translate}}</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.tel" name="Tel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{'LATITUDE' | translate}}</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.map.lat" name="Map Lat"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>{{'LONGTITUDE' | translate}}</ion-label>
+            <ion-input type="text" [(ngModel)]="shop.map.long" name="Map Long"></ion-input>
+        </ion-item>
+        <images-layout-upload-x [maxImage]="1" (imageOutList)="uploadImage($event)"></images-layout-upload-x>
+
+        <button ion-button type="submit" block>{{'ADD_SHOP' | translate}}</button>
+    </form>
 </ion-content>

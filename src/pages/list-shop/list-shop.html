@@ -6,18 +6,18 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>List Shop</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only end color="royal" (click)="createShop()">
+    <ion-navbar>
+        <ion-title>{{'LIST_SHOP' | translate}}</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only end color="royal" (click)="createShop()">
         <ion-icon name="ios-add-outline"></ion-icon>
       </button>
-    </ion-buttons>
-  </ion-navbar>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-<list-shops [items]="listShopData ? listShopData.items : []" (itemClicked)="selectShop($event)"></list-shops>
+    <list-shops [items]="listShopData ? listShopData.items : []" (itemClicked)="selectShop($event)"></list-shops>
 </ion-content>

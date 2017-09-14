@@ -7,4 +7,5 @@ export class AuthorizeModel {
     password: string;
     profileImageURL: string;
     roles: Array<string>;
+    shops: Array<any>;
 }
