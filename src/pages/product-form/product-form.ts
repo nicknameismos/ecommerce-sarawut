@@ -20,11 +20,12 @@ import { AuthorizeModel } from "../../providers/authorize/authorize.model";
   templateUrl: 'product-form.html',
 })
 export class ProductFormPage {
+  images: Array<any> = [];
   shippings: Array<Shipping> = [];
   categories: Array<Category> = [];
   productForm: ProductModel = new ProductModel();
   image: string;
-  shopData:AuthorizeModel = new AuthorizeModel();
+  shopData: AuthorizeModel = new AuthorizeModel();
   locations: any = [{
     id: 1,
     name: 'one'
@@ -54,17 +55,33 @@ export class ProductFormPage {
   }
 
   createProduct() {
-    console.log(this.productForm);
-    this.viewCtrl.dismiss({ data: this.productForm });
+    this.productFormServiceProvider.uploadImage(this.images).then(data => {
+      // alert('image' + JSON.stringify(data));
+      let images = [];
+      for (let i = 0; i < data.length; i++) {
+        images.push(data[i].imgURL);
+      }
+      this.productForm.images = images.length > 0 ? images : [];
+      this.viewCtrl.dismiss({ data: this.productForm });
+      // alert('data' + data);
+    })
+    // console.log(this.productForm);
+    // this.viewCtrl.dismiss({ data: this.productForm });
+
+
   }
 
-  addImage() {
-    this.productForm.images.push(this.image);
-    this.image = "";
-  }
+  // addImage() {
+  //   this.productForm.images.push(this.image);
+  //   this.image = "";
+  // }
 
   closeModal() {
     this.viewCtrl.dismiss();
+  }
+
+  uploadImage(e) {
+    this.images = e;
   }
 
 }

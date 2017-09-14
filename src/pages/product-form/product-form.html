@@ -6,85 +6,87 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>productForm</ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="closeModal()">
+    <ion-navbar>
+        <ion-title>productForm</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
         <ion-icon name="close" ></ion-icon>
       </button>
-    </ion-buttons>
-  </ion-navbar>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
+    <ion-list>
 
-    <ion-item>
-      <ion-label floating>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="productForm.name"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="productForm.name"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Detail</ion-label>
-      <ion-input type="text" [(ngModel)]="productForm.detail"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Detail</ion-label>
+            <ion-input type="text" [(ngModel)]="productForm.detail"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Price</ion-label>
-      <ion-input type="number" [(ngModel)]="productForm.price"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Price</ion-label>
+            <ion-input type="number" [(ngModel)]="productForm.price"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Promotion Price</ion-label>
-      <ion-input type="number" [(ngModel)]="productForm.promotionprice"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Promotion Price</ion-label>
+            <ion-input type="number" [(ngModel)]="productForm.promotionprice"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Percent of discount</ion-label>
-      <ion-input type="number" [(ngModel)]="productForm.percentofdiscount"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Percent of discount</ion-label>
+            <ion-input type="number" [(ngModel)]="productForm.percentofdiscount"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Currency</ion-label>
-      <ion-input type="text" [(ngModel)]="productForm.currency"></ion-input>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Currency</ion-label>
+            <ion-input type="text" [(ngModel)]="productForm.currency"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Categories</ion-label>
-      <ion-select [(ngModel)]="productForm.categories" multiple="true">
-        <ion-option *ngFor="let category of categories" [value]="category">{{category.name}}</ion-option>
-      </ion-select>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Categories</ion-label>
+            <ion-select [(ngModel)]="productForm.categories" multiple="true">
+                <ion-option *ngFor="let category of categories" [value]="category">{{category.name}}</ion-option>
+            </ion-select>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Shippings</ion-label>
-      <ion-select [(ngModel)]="productForm.shippings" multiple="true">
-        <ion-option *ngFor="let shipping of shippings" [value]="shipping">{{shipping.name}}</ion-option>
-      </ion-select>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Shippings</ion-label>
+            <ion-select [(ngModel)]="productForm.shippings" multiple="true">
+                <ion-option *ngFor="let shipping of shippings" [value]="shipping">{{shipping.name}}</ion-option>
+            </ion-select>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Shop</ion-label>
-      <ion-select [(ngModel)]="productForm.shop">
-        <ion-option *ngFor="let shop of shopData.shops" [value]="shop">{{shop.name}}</ion-option>
-      </ion-select>
-    </ion-item>
+        <ion-item>
+            <ion-label floating>Shop</ion-label>
+            <ion-select [(ngModel)]="productForm.shop">
+                <ion-option *ngFor="let shop of shopData.shops" [value]="shop">{{shop.name}}</ion-option>
+            </ion-select>
+        </ion-item>
 
-    <ion-item>
+        <!-- <ion-item>
       <ion-label floating>Image</ion-label>
       <ion-input type="text" [(ngModel)]="image"></ion-input>
-    </ion-item>
-
-  </ion-list>
-  {{productForm.categories ? productForm.categories.length : []}}
-  <p *ngFor="let item of productForm.images">{{item}}</p>
-
-  <button ion-button color="dark" round (click)="addImage()">Add Image</button>
+    </ion-item> -->
+        <images-layout-upload-x [maxImage]="5" (imageOutList)="uploadImage($event)"></images-layout-upload-x>
 
 
-  <div padding>
-    <button ion-button block (click)="createProduct()">Submit</button>
-  </div>
+    </ion-list>
+    {{productForm.categories ? productForm.categories.length : []}}
+    <p *ngFor="let item of productForm.images">{{item}}</p>
+
+    <!-- <button ion-button color="dark" round (click)="addImage()">Add Image</button> -->
+
+
+    <div padding>
+        <button ion-button block (click)="createProduct()">Submit</button>
+    </div>
 </ion-content>
