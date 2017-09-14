@@ -12,6 +12,7 @@ import { SettingPage } from "../setting/setting";
 import { LangaugePage } from "../langauge/langauge";
 import { PolicyPage } from "../policy/policy";
 import { HelpPage } from "../help/help";
+import { ListShopPage } from '../list-shop/list-shop';
 
 /**
  * Generated class for the ProfilePage page.
@@ -120,6 +121,10 @@ export class ProfilePage {
       console.log(data);
     });
     modal.present();
+  }
+
+  gotoListshop() {
+    this.navCtrl.push(ListShopPage);
   }
 
 }
