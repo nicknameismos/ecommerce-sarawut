@@ -132,6 +132,9 @@ import { ProductFormServiceProvider } from "../pages/product-form/product-form-s
 import { FormAddressPage } from '../pages/form-address/form-address';
 import { OrderPage } from '../pages/order/order';
 import { NotificationPage } from '../pages/notification/notification';
+import { OrderServiceProvider } from '../pages/order/order.service';
+import { IonOrdersComponent } from '../components/ion-orders/ion-orders';
+import { SegmentOrderComponent } from '../components/segment-order/segment-order';
 // import { RegisterServiceProvider } from "../pages/checkout/";
 
 export function createTranslateLoader(http: Http) {
@@ -204,7 +207,9 @@ export function createTranslateLoader(http: Http) {
     MomentPipe,
     FormAddressPage,
     OrderPage,
-    NotificationPage
+    NotificationPage,
+    IonOrdersComponent,
+    SegmentOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -295,7 +300,8 @@ export function createTranslateLoader(http: Http) {
     LangaugeServiceProvider,
     PolicyServiceProvider,
     HelpServiceProvider,
-    ProductFormServiceProvider
+    ProductFormServiceProvider,
+    OrderServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
