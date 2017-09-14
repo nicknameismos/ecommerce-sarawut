@@ -6,7 +6,6 @@
     "NAME": "Name",
     "LOCATION": "ตำแหน่งของฉัน",
     "DESCRIPTION": "Description",
-    "CURRENCY": "บาท",
     "WEATHER": "Weather",
     "NOTIFICATIONS": "Notifications",
     "PRIVACY_POLICY": "Privacy Policy",
@@ -170,6 +169,17 @@
     "EMAIL_SHOP": "อีเมลล์",
     "TEL_SHOP": "เบอร์โทร",
     "LATITUDE": "ละติจูด",
-    "LONGTITUDE": "ลองจิจูด"
-
+    "LONGTITUDE": "ลองจิจูด",
+    "PRODUCT_FORM": "เพิ่มสินค้า",
+    "NAME_PRODUCT": "ชื่อสินค้า",
+    "DETAIL_PRODUCT": "รายละเอียด",
+    "PRICE_PRODUCT": "ราคา",
+    "PROMOTION_PRICE": "ราคาโปรโมชั่น",
+    "PERCENT_DICCOUNT": "ส่วนลด %",
+    "CURRENCY": "สกุลเงิน",
+    "CATEGORIES_PRODUCT": "ประเภทสินค้า",
+    "SHOP_NAME": "ชื่อร้านค้า",
+    "ADD_PRODUCT": "เพิ่ม",
+    "LIST_PRODUCT": "รายการสินค้า",
+    "Notification": "การแจ้งเตือน"
 }
