@@ -1,0 +1,12 @@
+<ion-scroll scrollX="true" class="horizontal-categories">
+
+    <ion-row class="categories-row">
+        <ion-col width-30 class="horizontal-item" (click)="selectImage()" *ngIf="imageList.length < maxImage">
+            <preload-image class="add-img" [ratio]="{w:4, h:4}" src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Very-Basic-Plus-icon.png"></preload-image>
+        </ion-col>
+        <ion-col width-30 class="horizontal-item" *ngFor="let data of imageList">
+            <preload-image [ratio]="{w:4, h:4}" [src]="data.imgUrl"></preload-image>
+            <span class="trash" (click)="deleteImage(data.id)"><ion-icon name="trash"></ion-icon></span>
+        </ion-col>
+    </ion-row>
+</ion-scroll>

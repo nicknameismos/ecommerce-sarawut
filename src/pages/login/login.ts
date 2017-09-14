@@ -33,7 +33,7 @@ export class LoginPage {
     let loading = this.loadingCtrl.create();
     loading.present();
     this.loginServiceProvider.onAuthorization(this.credential).then((data) => {
-      this.navCtrl.pop();
+      this.navCtrl.push(TabsNavigationPage);
       loading.dismiss();
     }, (error) => {
 

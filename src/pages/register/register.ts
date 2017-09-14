@@ -4,6 +4,7 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 import { AuthorizeModel } from "./register.model";
 import { RegisterServiceProvider } from "./register.service";
+import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 
 /**
  * Generated class for the RegisterPage page.
@@ -42,7 +43,7 @@ export class RegisterPage {
     this.userInfo = this.signup.value;
     console.log(this.userInfo);
     this.regisService.newAuthorization(this.userInfo).then((data) => {
-      this.navCtrl.pop();
+      this.navCtrl.push(TabsNavigationPage);
       this.loading.dismiss();
     }, (error) => {
       console.error(error);

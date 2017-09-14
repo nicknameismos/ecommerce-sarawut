@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { HomePage } from "../home/home";
-import { SearchPage } from "../search/search";
-import { CartPage } from "../cart/cart";
+// import { SearchPage } from "../search/search";
+// import { CartPage } from "../cart/cart";
 import { ProfilePage } from "../profile/profile";
 // import { FavoritePage } from "../favorite/favorite";
 import { ListProductPage } from "../list-product/list-product";
 import { OrderPage } from '../order/order';
 import { NotificationPage } from '../notification/notification';
+import { AuthorizeProvider } from '../../providers/authorize/authorize';
+import { ModalController } from 'ionic-angular';
+import { ListShopServiceProvider } from '../list-shop/list-shop.service';
+import { ShopFormPage } from '../shop-form/shop-form';
 
 
 @Component({
@@ -20,12 +24,32 @@ export class TabsNavigationPage {
   tab4Root: any;
   tab5Root: any;
 
-  constructor() {
+  constructor(public authorizeProvider: AuthorizeProvider, public modalCtrl: ModalController, public listShopService: ListShopServiceProvider) {
     this.tab1Root = HomePage;
     this.tab2Root = OrderPage;
     this.tab3Root = ListProductPage;
     this.tab4Root = NotificationPage;
     this.tab5Root = ProfilePage;
+
+    var user = this.authorizeProvider.getAuthorization();
+    if (!(user.shops && user.shops.length > 0)) {
+      let modal = this.modalCtrl.create(ShopFormPage);
+      // Getting data from the modal:
+      modal.onDidDismiss(data => {
+
+        // console.log('MODAL DATA', data);
+        this.listShopService.addShop(data)
+          .then((resp) => {
+            console.log(resp);
+            user.shop = [resp];
+            window.localStorage.setItem('e7e_jjecommerce_buy_user', JSON.stringify(user));
+            // this.getListShopData();
+          }, (err) => {
+            console.log(err);
+          });
+      });
+      modal.present();
+    }
   }
   countBadgeCart() {
     let cart = JSON.parse(window.localStorage.getItem('cart'));

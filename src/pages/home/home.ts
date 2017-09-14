@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { AuthorizeProvider } from '../../providers/authorize/authorize';
+import { ShopFormPage } from '../shop-form/shop-form';
+import { ListShopServiceProvider } from '../list-shop/list-shop.service';
 
 /**
  * Generated class for the HomePage page.
@@ -18,6 +21,8 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
+    
+    // console.log(user);
     console.log('ionViewDidLoad HomePage');
   }
 

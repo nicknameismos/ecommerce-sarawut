@@ -132,6 +132,9 @@ import { ProductFormServiceProvider } from "../pages/product-form/product-form-s
 import { FormAddressPage } from '../pages/form-address/form-address';
 import { OrderPage } from '../pages/order/order';
 import { NotificationPage } from '../pages/notification/notification';
+import { ImagesLayoutUploadXComponent } from '../components/images-layout-upload-x/images-layout-upload-x';
+import { ShopFormServiceProvider } from '../pages/shop-form/shop-form.service';
+import { Base64 } from '@ionic-native/base64';
 // import { RegisterServiceProvider } from "../pages/checkout/";
 
 export function createTranslateLoader(http: Http) {
@@ -204,7 +207,8 @@ export function createTranslateLoader(http: Http) {
     MomentPipe,
     FormAddressPage,
     OrderPage,
-    NotificationPage
+    NotificationPage,
+    ImagesLayoutUploadXComponent
   ],
   imports: [
     BrowserModule,
@@ -295,7 +299,9 @@ export function createTranslateLoader(http: Http) {
     LangaugeServiceProvider,
     PolicyServiceProvider,
     HelpServiceProvider,
-    ProductFormServiceProvider
+    ProductFormServiceProvider,
+    ShopFormServiceProvider,
+    Base64
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
