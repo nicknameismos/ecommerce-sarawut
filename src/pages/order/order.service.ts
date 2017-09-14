@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { OrderModel } from "./order.model";
-
+import { Constants } from "../../app/app.contants";
 /*
   Generated class for the OrderServiceProvider provider.
 
@@ -17,8 +17,8 @@ export class OrderServiceProvider {
   }
 
   getData() {
-    // return this.http.get('https://greenvintage.herokuapp.com/api/orderlistbyshops')
-    return this.http.get('./assets/example_data/order.json')
+    return this.http.get(Constants.URL + '/api/getordersbyshop')
+    // return this.http.get('./assets/example_data/order.json')
       .toPromise()
       .then(resp => resp.json())
       .catch(err => Promise.reject(err.message || err));
