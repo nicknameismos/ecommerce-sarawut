@@ -1,0 +1,46 @@
+<ion-navbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-segment color="light" class="md" [(ngModel)]="tabs">
+          <ion-segment-button [ngClass]="tabs >= 0 ? 'active' : '' ">1</ion-segment-button>
+        </ion-segment>
+        <p>ที่อยู่จัดส่ง</p>
+      </ion-col>
+      <ion-col text-center>
+        <div class="lines" [ngClass]="tabs >= 1 ? 'active-lines' : '' "></div>
+      </ion-col>
+      <ion-col text-center>
+        <ion-segment color="light" [(ngModel)]="tabs">
+          <ion-segment-button [ngClass]="tabs >= 1 ? 'active' : '' ">2</ion-segment-button>
+        </ion-segment>
+        <p>ชำระเงิน</p>
+      </ion-col>
+      <ion-col text-center>
+        <div class="lines" [ngClass]="tabs >= 2 ? 'active-lines' : '' "></div>
+      </ion-col>
+      <ion-col text-center>
+        <ion-segment color="light" [(ngModel)]="tabs">
+          <ion-segment-button [ngClass]="tabs >= 2 ? 'active' : '' ">3</ion-segment-button>
+        </ion-segment>
+        <p>คอนเฟิร์ม</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-navbar>
+<ion-slides #formWizard (ionSlideWillChange)="changeWillSlide($event)">
+  <ion-slide>
+    <ion-content>
+      <shipping [listaddress]="listaddress" [listshipping]="listshipping"  (gotoNext)="slideNext($event)"></shipping>
+      <!-- <button ion-button full color="danger" class="slide-next" (click)="slideNext()">การชำระเงิน</button> -->
+    </ion-content>
+  </ion-slide>
+  <ion-slide>
+    <button ion-button full color="danger" (click)="slidePrev()">ย้อนกลับ</button>
+    <button ion-button full color="danger" (click)="slideNext()">ยืนยันการสั่งซื้อ</button>
+  </ion-slide>
+  <ion-slide>
+    <button ion-button full color="danger" (click)="slidePrev()">ย้อนกลับ</button>
+    <button ion-button full color="danger">คอนเฟิร์ม</button>
+  </ion-slide>
+</ion-slides>

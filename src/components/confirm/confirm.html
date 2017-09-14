@@ -1,0 +1,90 @@
+<!-- Generated template for the confirmgatewayComponent component -->
+<ion-content *ngIf="confirmgateway.order">
+  <ion-grid>
+    <!--<ion-row>
+    <ion-col>
+      <button ion-button full color="danger" class="slide-next" (click)="stepValidation()">Review สินค้า</button>
+    </ion-col>
+  </ion-row>-->
+    <ion-row>
+      <ion-col>
+        <ion-list no-lines>
+          <ion-item>
+            <p>มูลค่าสินค้า</p>
+            <p item-end>{{confirmgateway.order.amount | number}} บาท</p>
+          </ion-item>
+          <ion-item>
+            <p>ค่าธรรมเนียมการจัดส่งสินค้า</p>
+            <p item-end>{{confirmgateway.order.tran | number}} บาท</p>
+          </ion-item>
+          <ion-row>
+            <ion-col col-8>
+              <ion-item>
+                <ion-input type="text" [(ngModel)]="confirmgateway.order.discount" (ngModelChange)="discount(confirmgateway.order.discount)" placeholder="ใส่โค้ดส่วนลดตรงนี้"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-4>
+              <button ion-button block color="warning" (click)="discount(confirmgateway.order.discount)">ยืนยัน</button>
+            </ion-col>
+          </ion-row>
+          <ion-item>
+            <p><b>ยอดสุทธิ (รวมภาษีมูลค่าเพิ่ม)</b></p>
+            <p item-end><b>{{((confirmgateway.order.tran || 0) + (confirmgateway.order.amount || 0)) - (confirmgateway.order.discount || 0) | number}} บาท</b></p>
+          </ion-item>
+        </ion-list>
+        <!-- <ion-row>
+          <ion-col col-12>
+            <button ion-button block color="warning" (click)="stepValidation()">สั่งสินค้า</button>
+          </ion-col>
+        </ion-row> -->
+        <ion-item-group>
+          <ion-item-divider color="light"><b>รายการ</b></ion-item-divider>
+        </ion-item-group>
+        <div class="list-mini">
+          <ion-list *ngFor="let item of confirmgateway.order.items">
+            <ion-item>
+              <ion-row>
+                <ion-col col-12>
+                  <p>{{item.product.shop.name}}</p>
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <ion-col no-padding width-20 class="item-avatar">
+                  <preload-image class="avatar-image" [ratio]="{w:1, h:1}" src="{{item.product.image}}"></preload-image>
+                </ion-col>
+                <ion-col no-padding width-60 class="white-space">
+                  <h3 class="item-title">{{item.product.name}}</h3>
+                  <p class="item-description">จำนวน: {{item.qty}}</p>
+                </ion-col>
+                <ion-col no-padding width-20>
+                  <p>{{item.product.price}} บาท</p>
+                </ion-col>
+              </ion-row>
+              <ion-row no-padding>
+                <ion-col padding width-100 text-center class="ion-col-deilvery">
+                  <p>{{item.delivery.name}}</p>
+                  <p>{{item.delivery.detail}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-list>
+          <ion-row>
+            <p>ที่อยู่จัดส่ง</p>
+            <ion-col col-12>
+              <p class="review-address">{{confirmgateway.order.shipping.firstname}} {{confirmgateway.order.shipping.lastname}}</p>
+              <p class="review-address">{{confirmgateway.order.shipping.address}} {{confirmgateway.order.shipping.subdistrict}} {{confirmgateway.order.shipping.district}}
+                {{confirmgateway.order.shipping.province}} {{confirmgateway.order.shipping.postcode}}
+              </p>
+              <p class="review-address">โทร : {{confirmgateway.order.shipping.tel}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row class="marginB">
+            <ion-col col-12>
+              <button ion-button block color="warning" (click)="stepValidation()">สั่งสินค้า</button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

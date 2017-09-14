@@ -1,0 +1,73 @@
+{
+    "items": [
+        {
+            "product": {
+                "_id": "1",
+                "name": "Crossfit WorldWide Event",
+                "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
+                "price": 20000,
+                "promotionprice": 18000,
+                "percentofdiscount": 10,
+                "currency": "THB",
+                "shop": {
+                    "name": "Shop name"
+                },
+                "shippings": [
+                    {
+                        "shipping": {
+                            "detail": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                            "name": "ส่งแบบส่งด่วน",
+                            "price": 0
+                        }
+                    },
+                    {
+                        "shipping": {
+                            "detail": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                            "name": "ส่งแบบธรรมดา",
+                            "price": 0
+                        }
+                    }
+                ]
+            },
+            "qty": 1,
+            "amount": 20000,
+            "discount": 2000,
+            "totalamount": 18000
+        },
+        {
+            "product": {
+                "_id": "2",
+                "name": "US Open",
+                "image": "http://www.9digits.com/wp-content/uploads/2016/01/Nike-Air-Zoom-Pegasus-31-Mens-Running-Shoe-652925_801_C_PREM.jpg",
+                "price": 10000,
+                "currency": "THB",
+                "shop": {
+                    "name": "Shop name"
+                },
+                "shippings": [
+                    {
+                        "shipping": {
+                            "detail": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                            "name": "ส่งแบบส่งด่วน",
+                            "price": 0
+                        }
+                    },
+                    {
+                        "shipping": {
+                            "detail": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                            "name": "ส่งแบบธรรมดา",
+                            "price": 0
+                        }
+                    }
+                ]
+            },
+            "qty": 1,
+            "amount": 10000,
+            "discount": 0,
+            "totalamount": 10000
+        }
+    ],
+    "amount": 30000,
+    "discount": 2000,
+    "totalamount": 28000
+}

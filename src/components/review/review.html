@@ -1,0 +1,72 @@
+<!-- Generated template for the ReviewComponent component -->
+  <!-- reviews -->
+    <ion-row class="promotion-row" *ngIf="items">
+        <ion-col text-left>
+            {{'REVIEWS' | translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-grid class="review-card" *ngIf="items">
+        <ion-row>
+            <ion-col width-50>
+                <ion-row>
+                    <ion-col>
+                        <rating [(ngModel)]="rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                            starIconName="star" nullable="false"></rating>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <span class="text-title"> {{items.rate}} </span> <span class="text-readonly">{{'FROM' | translate}} 5</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <span class="text-readonly">{{items ? items.length : 0}} รีวิว</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+            <ion-col width-50 class="progress-box">
+                <p *ngFor="let group of groups">
+                    <ion-row>
+                        <ion-col width-30>
+                            <span class="text-readonly">{{group.name}} {{'STAR' | translate}}</span>
+                        </ion-col>
+                        <ion-col width-60 class="progress-bar">
+                            <span [style.width]="group.percent"></span>
+                        </ion-col>
+                        <ion-col width-10>
+                            <span class="text-readonly">{{group.sum}}</span>
+                        </ion-col>
+                    </ion-row>
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block outline (click)="writeReview()">{{'WRITEREVIEW' | translate}}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <hr *ngIf="items">
+    <ion-list *ngIf="items">
+        <ion-item-divider *ngFor="let review of items">
+            <p>
+                <ion-row>
+                    <ion-col no-padding width-60 text-left>
+                        <p class="text-sub-title">{{review.topic}}</p>
+                    </ion-col>
+                    <ion-col width-40 text-right>
+                        <p>{{review.created | moment: 'LL'}}</p>
+                        <p>{{review.user ? review.user.displayname : ''}}</p>
+                    </ion-col>
+                </ion-row>
+            </p>
+            <p>
+                <rating [(ngModel)]="review.rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                    starIconName="star" nullable="false"></rating>
+            </p>
+            <p>{{review.comment}}</p>
+            <p></p>
+        </ion-item-divider>
+    </ion-list>

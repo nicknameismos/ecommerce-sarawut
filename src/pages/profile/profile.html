@@ -1,0 +1,104 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ 'PROFILE' | translate }}</ion-title>
+        <!-- <ion-buttons start>
+            <button ion-button>
+        {{ 'SAVE' | translate }}
+      </button>
+        </ion-buttons> -->
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="settings-content">
+    <!-- <div *ngIf="profileData"> -->
+    <ion-list class="magin-top-10-bottom-0">
+        <button ion-item (click)="goLogin()" *ngIf="!profileData">
+                <ion-icon name="ios-happy-outline" item-start></ion-icon>
+                {{'SIGN_IN' | translate}}
+            </button>
+        <button ion-item *ngIf="profileData">
+                <ion-icon name="ios-happy-outline" item-start></ion-icon>
+                {{'WELCOME' | translate}} {{profileData.displayName}}
+            </button>
+    </ion-list>
+    <ion-list class="magin-top-10-bottom-0">
+        <button ion-item (click)="notification()">
+                <ion-icon name="ios-notifications-outline" item-start></ion-icon>
+                {{'PUSH_NOTIFICATION' | translate}}
+            </button>
+        <button ion-item (click)="histories()">
+                <ion-icon name="ios-filing-outline" item-start></ion-icon>
+                {{'HISTORY_LOG' | translate}}                
+            </button>
+        <button ion-item *ngIf="profileData" (click)="locations()">
+                <ion-icon name="ios-pin-outline" item-start></ion-icon>
+                {{'LOCATION' | translate}}                
+            </button>
+    </ion-list>
+    <ion-list class="magin-top-10-bottom-0">
+        <button ion-item (click)="setting()">
+                <ion-icon name="ios-settings-outline" item-start></ion-icon>
+                {{'SETTING' | translate}}                                
+            </button>
+    </ion-list>
+    <ion-list class="magin-top-10-bottom-0">
+        <button ion-item (click)="language()">
+                <ion-icon name="ios-create-outline" item-start></ion-icon>
+                {{'CHANGE_LANGUAGE' | translate}}                                                
+            </button>
+    </ion-list>
+    <ion-list class="magin-top-10-bottom-0">
+        <button ion-item (click)="policy()">
+                <ion-icon name="ios-document-outline" item-start></ion-icon>
+                {{'POLICY' | translate}}                                                                
+            </button>
+        <button ion-item (click)="help()">
+                <ion-icon name="ios-help-circle-outline" item-start></ion-icon>
+                {{'HELP' | translate}}                                                                
+            </button>
+    </ion-list>
+    <ion-list class="magin-top-10-bottom-0" *ngIf="profileData">
+        <button ion-item (click)="logout()">
+                <ion-icon name="ios-log-out-outline" item-start></ion-icon>
+                {{'LOG_OUT' | translate}}                                                                                
+            </button>
+    </ion-list>
+    <!-- <div class="user-image-content">
+            <ion-row no-padding class="user-image-row">
+                <ion-col no-padding width-40>
+                    <preload-image class="user-image" [ratio]="{w:1, h:1}" [src]="profileData.profileImageURL" alt="this is the image" title="IMAGE!"></preload-image>
+                </ion-col>
+            </ion-row>
+            <ion-row no-padding class="user-image-row">
+                <ion-col no-padding width-60>
+                    <button class="image-action-button" ion-button outline block small>{{ 'CHANGE_PROFILE_PICTURE' | translate}}</button>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-list class="user-data-content">
+            <ion-item>
+                <ion-label stacked>{{ 'First Name' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="profileData.firstName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>{{ 'Last Name' | translate }}</ion-label>
+                <ion-input type="text" [(ngModel)]="profileData.lastName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>{{ 'E-mail' | translate }}</ion-label>
+                <ion-input [(ngModel)]="profileData.email" rows="5" placeholder="Your email here..."></ion-input>
+            </ion-item>
+        </ion-list>
+
+
+        <button class="alt-button" ion-button full>{{'PRIVACY_POLICY' | translate}}</button>
+
+        <button class="alt-button" ion-button full>{{'TERMS_OF_USE' | translate }}</button>
+
+        <button class="alt-button logout-button" ion-button full icon-left (click)="logout()">
+    <ion-icon name="log-out"></ion-icon>
+    {{'LOG_OUT' | translate }}
+  </button> -->
+    <!-- </div> -->
+
+</ion-content>

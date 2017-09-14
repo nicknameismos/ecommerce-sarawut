@@ -1,0 +1,35 @@
+{
+    "user": {
+        "displayName": "Customer displayName",
+        "address": {
+            "address": "55/7 หมู่11 ถ.ลำลูกกา",
+            "subdistrict": "บึงคำพร้อย",
+            "district": "ลำลูกกา",
+            "province": "ปทุมธานี",
+            "postcode": "12150"
+        },
+        "tel": "0999999999"
+    },
+    "products": [
+        {
+            "name": "เสื้อยืน",
+            "qty": 2,
+            "price": 200,
+            "image": "http://img.nike.com.hk/resources/product/719760-702/719760-702_BL2.png",
+            "choice": [
+                {
+                    "discription": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                    "type": "ส่งแบบส่งด่วน"
+                },
+                {
+                    "discription": "วันอังคาร, 1 - วัน อังคาร, 2 ส.ค. 2017 ฟรี",
+                    "type": "ส่งแบบธรรมดา"
+                }
+            ],
+            "shopdetail": {
+                "name": "Shop Name"
+            }
+        }
+    ],
+    "total": 400
+}

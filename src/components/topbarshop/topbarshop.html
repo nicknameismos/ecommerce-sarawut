@@ -1,0 +1,22 @@
+<!-- <background-image [src]="dataTopBar.image"></background-image> BUG -->
+
+<preload-image [ratio]="{w:5, h:3}" [src]="dataTopBar.image"></preload-image>
+<ion-row class="contact-details-row" wrap>
+  <ion-col no-padding width-65>
+    <h2 class="contact-name">{{dataTopBar.name}}</h2>
+  </ion-col>
+  <ion-col no-padding width-35 class="rating-col">
+    <ion-icon (click)="onClickF()" *ngIf="!status" name="md-heart" color="danger" class="circle-btn"></ion-icon>
+    <ion-icon (click)="onClick()" *ngIf="status" name="md-heart-outline" color="danger" class="circle-btn"></ion-icon>
+  </ion-col>
+
+  <ion-col no-padding width-60>
+    <p class="contact-description">
+      {{dataTopBar.detail}}
+    </p>
+  </ion-col>
+  <ion-col no-padding width-40 class="rating-col">
+    <rating [(ngModel)]="dataTopBar.rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+      starIconName="star" nullable="false"></rating>
+  </ion-col>
+</ion-row>

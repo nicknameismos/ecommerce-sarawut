@@ -1,0 +1,76 @@
+topbar {
+    ul {
+        padding: 0px;
+        &.rating li {
+            padding: 0px 0px !important;
+            background: none;
+            color: #ffb400;
+            ion-icon {
+                font-size: 15px;
+            }
+        }
+    }
+    $contact-card-slides-height: 45%;
+    .contact-slides {
+        height: $contact-card-slides-height;
+        ion-slide.contact-slide {
+            .slide-zoom {
+                height: 100%;
+            }
+        }
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                opacity: 1;
+                background: $white;
+                width: 10px;
+                height: 10px;
+            }
+            .swiper-pagination-bullet-active {
+                background: $theme-color-1;
+            }
+        }
+    }
+    .contact-details-row {
+        background: $black-a;
+        color: $white-b;
+        padding: 16px;
+        .contact-name {
+            margin: 0px;
+            font-size: 2.2rem;
+            font-weight: 400;
+        }
+        .rating-col {
+            display: flex;
+            @include align-items(center);
+            @include justify-content(flex-end);
+        }
+        .contact-rating {
+            @include rating-item-styles($white-d, $theme-color-1);
+            .rating-item {
+                box-shadow: none;
+                background: transparent;
+                margin: 2px 0px;
+                min-height: 0px;
+                rating {
+                    padding: 0px !important;
+                    .rating-icon {
+                        height: auto;
+                        &:last-child {
+                            padding-right: 0px;
+                        }
+                        ion-icon {
+                            font-size: 0.9em !important;
+                        }
+                    }
+                }
+            }
+        }
+        .contact-description {
+            margin: 8px 0px 0px;
+            color: $white-d;
+        }
+    }
+    .color-gold-custom {
+        color: gold;
+    }
+}

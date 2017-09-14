@@ -1,0 +1,40 @@
+counterservice {
+    .segment-md .segment-button {
+        border-top-left-radius: 0% !important;
+        border-top-right-radius: 0% !important;
+        border-bottom-right-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
+        // opacity: 0 !important;
+        background-color: transparent !important;
+    }
+    .segment-md-light .segment-button.segment-activated {
+        // background-color: #EEF0F0;
+        background-color: transparent !important;
+        width: 50px !important;
+        height: 50px !important;
+        padding: 0 1px !important;
+    }
+    ion-segment {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto !important;
+    }
+    ion-segment-button {
+        width: 40px !important;
+        height: 40px !important;
+        display: table !important;
+        font-size: 130% !important;
+        z-index: 999 !important;
+    }
+    ion-col {
+        text-align: center !important;
+        p {
+            color: #000000;
+            font-weight: bold;
+            font-size: 12px !important;
+            margin-bottom: 0px !important;
+            position: inherit;
+            bottom: 5px !important;
+        }
+    }
+}

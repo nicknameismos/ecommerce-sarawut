@@ -1,0 +1,21 @@
+<!-- Generated template for the IonFormWizardComponent component -->
+<ion-navbar>
+  <ion-grid text-right>
+    <ion-row>
+      <ion-col *ngFor="let step of steps">
+        <ion-row>
+          <ion-col text-center>
+            <ion-segment color="light" class="md" [(ngModel)]="currentstep">
+              <ion-segment-button [ngClass]="currentstep >= step.value ? 'active' : '' " [value]="step.value">{{step.value}}</ion-segment-button>
+            </ion-segment>
+            <p>{{step.title | translate}}</p>
+          </ion-col>
+          <!-- <ion-col text-center>
+            <div class="lines" [ngClass]="currentstep >= step.value + 1 ? 'active-lines' : '' "></div>
+          </ion-col> -->
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-navbar>
+<ng-content></ng-content>

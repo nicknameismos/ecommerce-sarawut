@@ -1,0 +1,24 @@
+ion-form-wizard {
+    .segment-ios .segment-button {
+        border-top-left-radius: 100% !important;
+        border-top-right-radius: 100% !important;
+        border-bottom-right-radius: 100% !important;
+        border-bottom-left-radius: 100% !important;
+        opacity: 1 !important;
+        background-color: rgb(248, 248, 248);
+    }
+    .toolbar-ios .segment-ios {
+        position: inherit !important;
+    }
+    .segment-ios-light .segment-button.segment-activated {
+        color: #fff;
+        background-color: #00e9d5 !important;
+        border-color: #00e9d5;
+    }
+    .segment-ios-light .segment-button {
+        border-color: #00e9d5;
+        border: 1px solid;
+        color: #00e9d5;
+        line-height: 4rem !important;
+    }
+}

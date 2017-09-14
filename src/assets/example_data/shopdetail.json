@@ -1,0 +1,37 @@
+{
+    "id": "shop001",
+    "name": "ร้านขายรองเท้ามือสอง",
+    "email": "shoe2hand@gmail.com",
+    "tel": "0894447208",
+    "map": {
+        "lat": "13.8039687",
+        "long": "100.5480887"
+    },
+    "image": "https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/522794/3000/1997/m1/fpnw/wm0/flat-product-sale-shoe-banner-p1-.jpg?1434193319&s=5e32357a0be6ce6fded220d5ad54624f",
+    "coverimg": {
+        "id": "001",
+        "url": "img/001"
+    },
+    "detail": "ขายรองเท้ามือสอง สภาพดี ราคาถูก",
+    "reviews": [
+        {
+            "topic": "สวย",
+            "comment": "สินค้าตัวจริงสวยมากเลยค่ะ",
+            "rate": 4.5,
+            "user": {
+                "displayname": "theerasak.t"
+            },
+            "created": ""
+        },
+        {
+            "topic": "จัดส่งไว",
+            "comment": "ถ้าได้สินค้าแล้วจะกลับมาเพิ่มดาวให้นะ",
+            "rate": 1.5,
+            "user": {
+                "displayname": "theerasak.t"
+            },
+            "created": ""
+        }
+    ],
+    "rate": 4.5
+}

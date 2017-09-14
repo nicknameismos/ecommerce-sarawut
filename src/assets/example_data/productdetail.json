@@ -1,0 +1,69 @@
+{
+    "_id": "product001",
+    "name": "NIKE",
+    "detail": "All item(s) will be shipped",
+    "price": 100,
+    "promotionprice": 50,
+    "percentofdiscount": 50,
+    "currency": "THB",
+    "images": [
+        "https://assets.wired.com/photos/w_1534/wp-content/uploads/2016/09/ff_nike-hyperadapt_angle_front.jpg",
+        "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg"
+    ],
+    "rate": 4.5,
+    "reviews": [
+        {
+            "topic": "สวย",
+            "comment": "สินค้าตัวจริงสวยมากเลยค่ะ",
+            "rate": 4.5,
+            "user": {
+                "displayname": "theerasak.t"
+            },
+            "created": ""
+        },
+        {
+            "topic": "จัดส่งไว",
+            "comment": "ถ้าได้สินค้าแล้วจะกลับมาเพิ่มดาวให้นะ",
+            "rate": 1.5,
+            "user": {
+                "displayname": "theerasak.t"
+            },
+            "created": ""
+        }
+    ],
+    "shippings": [
+        {
+            "_id": "1",
+            "name": "ส่งแบบธรรมดา: ฟรี"
+        }
+    ],
+    "shop": {
+        "name": "Adidas Thailand",
+        "rate": 4
+    },
+    "other":{
+        "name": "LASTVIEWS",
+        "products": [
+            {
+                "name": "NIKE",
+                "image": "https://assets.wired.com/photos/w_1534/wp-content/uploads/2016/09/ff_nike-hyperadapt_angle_front.jpg",
+                "price": 100
+            },
+            {
+                "name": "ADIDAS",
+                "image": "http://th-live-01.slatic.net/p/7/adidas-men-run-shoe-duramo8-bb4656-2290-1493865078-91437671-31f932a8c992f98dc9ba8c6b4dec3f6e-catalog_233.jpg",
+                "price": 100
+            },
+            {
+                "name": "PUMA",
+                "image": "http://gadgets.siamsport.co.th/wp-content/uploads/puma-nrgy-sneakers.jpg",
+                "price": 100
+            },
+            {
+                "name": "ONITSUKA",
+                "image": "https://th-live-02.slatic.net/p/7/onitsuka-tiger-womens-serrano-shoes-d471l-1494928131-7120789-b60f98a3253f8a5230b4a0cf110588e1.jpg",
+                "price": 100
+            }
+        ]
+    }
+}

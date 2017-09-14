@@ -1,0 +1,24 @@
+{
+    "address": [
+        {
+            "address": "90",
+            "district": "ลำลูกกา",
+            "postcode": "12150",
+            "province": "ปทุมธานี",
+            "subdistrict": "ลำลูกกา",
+            "firstname": "amonrat",
+            "lastname": "chantawon",
+            "tel": "0934524524"
+        },
+        {
+            "address": "999 ",
+            "district": "ลำลูกกา",
+            "postcode": "12150",
+            "province": "ปทุมธานี",
+            "subdistrict": "ลำลูกกา",
+            "firstname": "amonrat",
+            "lastname": "chantawon",
+            "tel": "0934524524"
+        }
+    ]
+}

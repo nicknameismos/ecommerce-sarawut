@@ -1,0 +1,38 @@
+<!-- Generated template for the ScrollbarsComponent component -->
+<div class="slide-tabs">
+  <ion-toolbar no-border class="scrollable-segments" (touchstart)="touchToolbar($event)">
+    <ion-segment [(ngModel)]="tabs" id="scrollable">
+      <ion-segment-button *ngFor="let item of items; let i = index;" (click)="selectTab(i)" value="{{i}}">
+        {{item.name}}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-slides #tabsSlider *ngIf="items" (ionSlideWillChange)="changeWillSlide($event)">
+    <ion-slide *ngFor="let page of getPage(items.length);">
+      <ion-content>
+        <!-- <ads-header-bar [images]="items[page].images"></ads-header-bar> -->
+
+        <h4 class="categories-title" *ngIf="items[page].productvoucher && items[page].productvoucher.length > 0">{{'PRODUCTVOUCHER' | translate}}</h4>
+        <image-list [images]="items[page].productvoucher" *ngIf="items[page].productvoucher && items[page].productvoucher.length > 0"
+          (click)="selectedVoucher()"></image-list>
+
+        <h4 class="categories-title" *ngIf="items[page].lastvisit && items[page].lastvisit.length > 0">{{'LASTVISIT' | translate}}</h4>
+        <!--  <span class="see-all" (click)="productList('lastvisit')">see all</span> -->
+        <list-scoll-x [populars]="items[page].lastvisit" (selectedItem)="clickItem($event)" *ngIf="items[page].lastvisit && items[page].lastvisit.length > 0"></list-scoll-x>
+
+        <h4 class="categories-title" *ngIf="items[page].popularshops && items[page].popularshops.length > 0">{{'SHOP' | translate}} <span class="see-all" (click)="shopList('shop')">see all</span></h4>
+        <list-grid [items]="items[page].popularshops" (selectedItem)="clickShop($event)" *ngIf="items[page].popularshops && items[page].popularshops.length > 0"></list-grid>
+
+        <h4 class="categories-title" *ngIf="items[page].shopvoucher && items[page].shopvoucher.length > 0">{{'SHOPVOUCHER' | translate}}</h4>
+        <image-list [images]="items[page].shopvoucher" *ngIf="items[page].shopvoucher && items[page].shopvoucher.length > 0" (click)="selectedVoucher()"></image-list>
+
+        <h4 class="categories-title">{{'POPULAR' | translate}} <span class="see-all" (click)="productList('popular')" *ngIf="items[page].popularproducts && items[page].popularproducts.length > 0">see all</span></h4>
+        <list-scoll-x [populars]="items[page].popularproducts" (selectedItem)="clickItem($event)" *ngIf="items[page].popularproducts && items[page].popularproducts.length > 0"></list-scoll-x>
+
+        <h4 class="categories-title" *ngIf="items[page].bestseller && items[page].bestseller.length > 0">{{'BESTSELLER' | translate}} <span class="see-all" (click)="productList('bestseller')">see all</span></h4>
+        <list-scoll-x [populars]="items[page].bestseller" (selectedItem)="clickItem($event)" *ngIf="items[page].bestseller && items[page].bestseller.length > 0"></list-scoll-x>
+
+      </ion-content>
+    </ion-slide>
+  </ion-slides>
+</div>

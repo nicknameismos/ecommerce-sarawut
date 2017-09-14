@@ -1,0 +1,11 @@
+<ion-row class="grid-items">
+  <ion-col width-50 class="grid-item" *ngFor="let item of items" (click)="_selectedItem(item)">
+    <background-image tappable class="item-heading" [src]="item.image">
+      <ion-row class="heading-row">
+        <ion-col no-padding width-100>
+          <h2 class="item-title">{{item.name}}</h2>
+        </ion-col>
+      </ion-row>
+    </background-image>
+  </ion-col>
+</ion-row>

@@ -1,0 +1,85 @@
+<!-- Generated template for the ShippingComponent component -->
+<ion-content>
+    <ion-label class="label label-ios"> {{'SHIPPING' | translate}} </ion-label>
+    <ion-list class="radio-group" radio-group>
+        <ion-item class="radio-item" *ngFor="let item of listaddress.address" (click)="selectaddress(item)">
+            <ion-label class="detail-style">
+                <ion-row>
+                    <ion-col width-33>
+                        <p class="p-black">{{item.firstname}} {{item.lastname}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-100>
+                        <p>{{item.address}} {{item.district}} {{item.subdistrict}} {{item.province}} {{item.postcode}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-33>
+                        <p style="word-wrap: break-word;">{{item.tel}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-label>
+            <ion-radio (click)="selectaddress(item)"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-label class="p-blue" (click)="openModal()">{{'ADD_NEW_ADDRESS' | translate}}</ion-label>
+    <ion-label class="label label-ios"> {{'PLEASE_SELECT_THE_TYPE_OF_SHIPMENT' | translate}} </ion-label>
+    <!--  -->
+    <ion-list>
+        <div *ngFor="let item of listshipping.items">
+            <ion-item>
+                <ion-row>
+                    <ion-col width-15>
+                        <p class="p-black">{{item.product.shop.name}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col no-padding width-33 class="magin-right-10-custom">
+                        <preload-image [ratio]="{w:1, h:1}" [src]="item.product.image"></preload-image>
+                    </ion-col>
+                    <ion-col>
+                        <p class="p-black">{{item.product.name}}</p>
+                        <p> {{item.qty}} {{'QTY' | translate}}</p>
+                        <p> {{item.product.price | number}} Baht</p>
+                        <p text-right>รวม {{item.product.price * item.qty | number}} {{'CURRENCY' | translate}}</p>
+
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-row>
+                <ion-col width-100>
+                    <p class="p-black">{{'SHIPPINGMETHOD' | translate}}</p>
+                </ion-col>
+            </ion-row>
+            <ion-list class="radio-tags" radio-group>
+                <ion-item *ngFor="let itm of item.product.shippings" class="radio-tag" (click)="setproduct(item,itm)">
+                    <ion-label>
+                        <p>{{itm.shipping.name}}</p>
+                        <p>{{itm.shipping.detail}}</p>
+                    </ion-label>
+                    <ion-radio (click)="setproduct(item,itm)"></ion-radio>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-list>
+    <ion-grid>
+        <div *ngIf="listshipping.items && listshipping.items.length > 0">
+            <ion-row>
+                <ion-col width-50>
+                    <p class="p-black">{{'TOTAL_PRICE' | translate}}</p>
+                    <p class="p-black">{{'DISCOUNT' | translate}}</p>
+                    <p class="p-black">{{'TOTAL_NET' | translate}}</p>
+                </ion-col>
+                <ion-col width-50>
+                    <p text-right class="p-black">{{listshipping.amount | number}} {{currency | translate}}</p>
+                    <p text-right class="p-black">{{listshipping.discount | number}} {{currency | translate}}</p>
+                    <p text-right class="p-black">{{listshipping.totalamount | number}} {{currency | translate}}</p>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
+    <ion-grid>
+        <button ion-button full color="danger" class="slide-next" (click)="stepValidation()">{{'PAYMENT' | translate}}</button>
+    </ion-grid>
+</ion-content>

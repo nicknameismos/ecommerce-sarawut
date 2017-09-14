@@ -1,0 +1,46 @@
+<!-- <ion-grid padding class="forms-examples-segment" *ngIf="parent.channel == value">
+    <ion-row>
+          <ion-col col-12>
+              <ion-list class="radio-tags" radio-group [(ngModel)]="store">
+                  <ion-grid>
+                      <ion-row>
+                          <ion-col col-4 *ngFor="let counter of paymentgateway" (click)="countername(counter.name)">
+                              <ion-item class="radio-tag">
+                                  <ion-label>
+  
+                                      <preload-image [ratio]="{w:1, h:1}" src="{{counter.img}}"></preload-image>
+                                      <p class="font-custom">{{counter.name}}</p>
+  
+                                  </ion-label>
+                                  <ion-radio [value]="counter.name" (click)="countername(counter.name)"></ion-radio>
+                              </ion-item>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid>
+              </ion-list>
+          </ion-col>
+      </ion-row>
+      <button *ngIf="store" ion-button full color="warning" icon-left (click)="stepValidation()">
+          Review Order
+        </button>
+  </ion-grid> -->
+<ion-item-group *ngIf="parent.channel == value">
+    <ion-item-divider color="light"><b>bank</b></ion-item-divider>
+</ion-item-group>
+<ion-grid text-right *ngIf="parent.channel == value">
+    <ion-row>
+        <ion-col>
+            <ion-row>
+                <ion-col text-center *ngFor="let counter of paymentgateway" (click)="selectcounter(counter)">
+                    <ion-segment color="light" class="md" [(ngModel)]="counteractive">
+                        <ion-segment-button [value]="counter.name" [ngClass]="counteractive >= counter.value ? 'active' : '' ">
+                            <preload-image [ratio]="{w:1, h:1}" src="{{counter.img}}"></preload-image>
+                        </ion-segment-button>
+                    </ion-segment>
+                    <p [ngClass]="counteractive >= counter.value ? 'active' : '' ">{{counter.name}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+<ng-content></ng-content>

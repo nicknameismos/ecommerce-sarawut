@@ -1,0 +1,35 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>checkout</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <!-- <form-wizard [listaddress]="address.address" [listshipping]="shipping">
+    <form-wizard-step stepTitle="{{'HOME' | translate}}" [root]="step1Root"></form-wizard-step>
+    <form-wizard-step stepTitle="{{'HOME' | translate}}" [root]="step1Root"></form-wizard-step>
+    <form-wizard-step stepTitle="{{'HOME' | translate}}" [root]="step3Root"></form-wizard-step>
+  </form-wizard> -->
+    <ion-form-wizard [steps]="steps" [(currentstep)]="currentstep">
+        <ion-form-wizard-step [step]="1">
+            <!-- <shipping [listaddress]="address" [listshipping]="shipping" (gotoNext)="completedShippingStep($event)"></shipping> -->
+            <shipping [listaddress]="address" [listshipping]="shipping" (gotoNext)="completedShippingStep($event)" (createAddress)="openFormAddress($event)"></shipping>
+        </ion-form-wizard-step>
+        <ion-form-wizard-step [step]="2">
+            <!-- <payment [paymentgateway]="payment" (paygateway)="paymentgateway($event)"></payment> -->
+            <payment [paymentgateway]="payment" [datashipping]="datashipping" (gotoNext)="completedPaymentStep($event)"></payment>
+        </ion-form-wizard-step>
+        <ion-form-wizard-step [step]="3">
+            <confirm [confirmgateway]="datapayment" (gotoNext)="completedConfirmStep($event)"></confirm>
+        </ion-form-wizard-step>
+    </ion-form-wizard>
+</ion-content>

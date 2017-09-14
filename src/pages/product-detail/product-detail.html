@@ -1,0 +1,100 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{'PRODUCTDETAIL' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="contact-card-content">
+    <!-- product images -->
+    <slide-images [images]="productdetailData.images"></slide-images>
+
+    <!-- product infomations -->
+    <ion-grid class="product-detail-card">
+        <ion-row>
+            <ion-col>
+                <p class="text-title">{{productdetailData.name}}</p>
+                <p>{{productdetailData.detail}}</p>
+                <p>
+                    <span class="text-big-red">{{productdetailData.promotionprice}} {{productdetailData.currency | translate}}</span>
+                    <span class="text-decoration">{{productdetailData.price}} {{productdetailData.currency | translate}}</span>
+                    <span>-{{productdetailData.percentofdiscount}} %</span>
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="productdetailData.rate" >
+            <ion-col width-50>
+                <rating [(ngModel)]="productdetailData.rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                    starIconName="star" nullable="false"></rating>
+            </ion-col>
+            <ion-col width-50 text-right class="product-user-action">
+                <button ion-button color="danger" clear icon-only (click)="socialShare()">
+                    <ion-icon name='ios-share-outline' is-active="false"></ion-icon>
+                </button>
+                <button ion-button color="danger" clear icon-only (click)="liked()">
+                        <ion-icon [name]='nameOfLike' is-active="false" ></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+    <!-- shipping -->
+    <ion-row class="promotion-row" *ngIf="productdetailData.shippings && productdetailData.shippings.length > 0">
+        <ion-col text-left>
+            {{'SHIPPINGMETHOD' | translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-list *ngIf="productdetailData.shippings && productdetailData.shippings.length > 0">
+        <!-- <ion-item-divider>
+            <ion-icon item-start name="ios-pin-outline"></ion-icon> current location
+        </ion-item-divider> -->
+        <ion-item-divider *ngFor="let shipping of productdetailData.shippings">
+            <ion-icon item-start name="ios-archive-outline"></ion-icon> {{shipping.name}}
+        </ion-item-divider>
+        <ion-item-divider *ngIf="productdetailData.cod">
+            <ion-icon item-start name="ios-cash-outline"></ion-icon> {{'COD' | translate}}
+        </ion-item-divider>
+    </ion-list>
+
+    <!-- saller -->
+    <ion-row class="promotion-row" *ngIf="productdetailData.shop">
+        <ion-col text-left>
+            {{'SALLER' | translate}}
+        </ion-col>
+    </ion-row>
+
+    <ion-grid class="product-detail-card" (click)="goToShop()" *ngIf="productdetailData.shop" >
+
+        <ion-row>
+            <ion-col>
+                <span class="text-sub-title">{{productdetailData.shop.name}}</span>
+            </ion-col>
+
+        </ion-row>
+         <ion-row>
+            <ion-col text-left>
+                <rating [(ngModel)]="productdetailData.shop.rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+                    starIconName="star" nullable="false"></rating>
+            </ion-col>
+        </ion-row> 
+
+    </ion-grid>
+
+    <!-- reviews -->
+    <review [items]="productdetailData.reviews" [rate]="productdetailData.rate" (modalReview)="writeReview($event)" *ngIf="productdetailData.rate" ></review>
+
+    <!-- other -->
+    <ion-row class="promotion-row" *ngIf="productdetailData.other">
+        <ion-col text-left>
+            {{productdetailData.other.name | translate}}
+        </ion-col>
+    </ion-row>
+
+    <list-scoll-x [populars]="productdetailData.other.products" *ngIf="productdetailData.other" (selectedItem)="gotoOtherProduct($event)"></list-scoll-x>
+
+</ion-content>
+
+<ion-footer>
+    <button ion-button block color="danger" (click)="addToCart(product)">{{"ADDCART"| translate}}</button>
+</ion-footer>

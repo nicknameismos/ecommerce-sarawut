@@ -1,0 +1,38 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="cartData">{{cartData.title | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="cartData && cartData.cart">
+    <cart-list [carts]="cartData.cart.items" (clickDeleteItem)="deleteItem($event)" (manageItem)="changeQtyItem()"></cart-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div *ngIf="cartData && cartData.cart && cartData.cart.items && cartData.cart.items.length > 0">
+    <ion-row class="categories-title">
+      <ion-col width-60>
+        <p class="color-black-custom font-bold">ราคารวมโดยประมาณ</p>
+        <p class="color-black-custom font-bold">ส่วนลดโดยประมาณ</p>
+        <p class="color-black-custom font-bold">รวมสุทธิโดยประมาณ</p>
+      </ion-col>
+      <ion-col width-40 text-right>
+        <p class="color-black-custom font-bold">{{cartData.cart.amount | number}} {{'CURRENCY' | translate}}</p>
+        <p class="color-black-custom font-bold">{{cartData.cart.discount | number}} {{'CURRENCY' | translate}}</p>
+        <p class="color-black-custom font-bold">{{cartData.cart.totalamount | number}} {{'CURRENCY' | translate}}</p>
+      </ion-col>
+    </ion-row>
+    <button ion-button full color="danger" (click)="gotocheckout()">{{"PAYMENT" | translate}}</button>
+  </div>
+</ion-footer>

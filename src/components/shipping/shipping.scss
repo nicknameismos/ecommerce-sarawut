@@ -1,0 +1,24 @@
+shipping {
+    p {
+        text-align: left !important;
+    }
+    .p-blue {
+        color: blue;
+    }
+    .p-black {
+        color: black;
+    }
+    .swiper-container {
+        position: relative;
+        z-index: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 200% !important;
+        /* height: 5000px; */
+    }
+    
+}

@@ -1,0 +1,41 @@
+ion-payments {
+    .segment-md .segment-button {
+        border-top-left-radius: 0% !important;
+        border-top-right-radius: 0% !important;
+        border-bottom-right-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
+        // opacity: 0 !important;
+        // background-color: rgb(248, 248, 248) !important;
+    }
+    .segment-md-light .segment-button.segment-activated {
+        // color: #fff;
+        // border-color: #00e9d5;
+        background-color: #E4E4E4;
+    } 
+    .segment-md-light .segment-button {
+        border: 0px !important;
+    }
+    ion-segment {
+        width: 45px !important;
+        height: 45px !important;
+        margin: 0 auto !important;
+    }
+    ion-segment-button {
+        width: 45px !important;
+        height: 45px !important;
+        display: table !important;
+        font-size: 130% !important;
+        z-index: 999 !important;
+    }
+    ion-col {
+        text-align: center !important;
+        p {
+            color: #000000;
+            font-weight: bold;
+            font-size: 12px !important;
+            margin-bottom: 0px !important;
+            position: inherit; // margin-top: 45px !important;
+            bottom: 5px !important;
+        }
+    }
+}

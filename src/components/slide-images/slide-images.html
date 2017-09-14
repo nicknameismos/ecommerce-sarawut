@@ -1,0 +1,5 @@
+<ion-slides class="contact-slides" pager="true" *ngIf="images">
+  <ion-slide class="contact-slide" *ngFor="let image of images">
+    <background-image [src]="image"></background-image>
+  </ion-slide>
+</ion-slides>

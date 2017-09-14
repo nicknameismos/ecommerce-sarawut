@@ -1,0 +1,5 @@
+<ion-row *ngFor="let itm of items">
+  <ion-col (click) = "selected(itm.title)">
+      {{itm.title}}
+  </ion-col>
+</ion-row>

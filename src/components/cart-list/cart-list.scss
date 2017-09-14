@@ -1,0 +1,33 @@
+cart-list {
+    .item-inner {
+        padding-right: 0 !important;
+    }
+    
+    .h3-name {
+        color: #ae75e7;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .color-orenge-custom {
+        color: #ff5722;
+    }
+    .color-gold-custom {
+        color: gold;
+    }
+    .text-decoration {
+        text-decoration: line-through;
+    }
+    .filter-bar {
+        background-color: #fff;
+        margin-bottom: 6px;
+        padding: 10px;
+    }
+    .magin-right-10-custom {
+        margin-right: 10px;
+    }
+    .icon-item {
+        font-size: 30px;
+    }
+}
