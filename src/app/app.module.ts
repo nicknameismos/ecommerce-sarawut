@@ -132,6 +132,8 @@ import { ProductFormServiceProvider } from "../pages/product-form/product-form-s
 import { FormAddressPage } from '../pages/form-address/form-address';
 import { OrderPage } from '../pages/order/order';
 import { NotificationPage } from '../pages/notification/notification';
+import { NotificationserviceProvider } from '../pages/notification/notification.service';
+import { ListNotificationComponent } from '../components/list-notification/list-notification';
 // import { RegisterServiceProvider } from "../pages/checkout/";
 
 export function createTranslateLoader(http: Http) {
@@ -204,7 +206,8 @@ export function createTranslateLoader(http: Http) {
     MomentPipe,
     FormAddressPage,
     OrderPage,
-    NotificationPage
+    NotificationPage,
+    ListNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -295,7 +298,8 @@ export function createTranslateLoader(http: Http) {
     LangaugeServiceProvider,
     PolicyServiceProvider,
     HelpServiceProvider,
-    ProductFormServiceProvider
+    ProductFormServiceProvider,
+    NotificationserviceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
