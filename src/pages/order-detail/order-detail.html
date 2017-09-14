@@ -1,0 +1,88 @@
+<!--
+  Generated template for the OrderDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>orderDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="contact-card-content">
+  <topbar [dataTopBar]="orderdetailData"></topbar>
+
+  <ion-list class="details-list">
+    <ion-item class="detail-item">
+      <ion-row>
+        <ion-col width-35>
+          <h3 class="categories-title-pomotion">
+            <ion-icon name="ios-cash-outline"></ion-icon>
+          </h3>
+        </ion-col>
+        <ion-col width-65 text-right>
+          <h3>Price {{orderdetailData.price | number}} ฿</h3>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <!-- <ion-item class="detail-item" *ngIf="orderdetailData.promotions">
+      <div *ngFor="let item of orderdetailData.promotions">
+        <h3 class="categories-title-pomotion">
+          <ion-icon name="md-pricetags"></ion-icon> {{'Promotion' | translate}}</h3>
+        <h4 class="detail-textHeader">{{item.name}}</h4>
+        <p class="detail-text">{{item.desc}}</p>
+      </div>
+    </ion-item> -->
+    <ion-item class="detail-item">
+      <h3 class="categories-title-pomotion">
+        <ion-icon name="md-car"></ion-icon> {{'Shipping' | translate}}</h3>
+      <div>
+
+        <span class="detail-textHeader">จัดส่ง : {{orderdetailData.delivery.name}}</span>
+        <span class="detail-textHeader">  {{orderdetailData.delivery.detail}} </span>
+        <span class="detail-textHeader"> ค่าจัดส่ง {{orderdetailData.delivery.price}} บาท</span>
+        <span class="detail-textHeader"> ระยะเวลา {{orderdetailData.delivery.days}} วัน</span>
+
+
+      </div>
+    </ion-item>
+    <ion-item class="detail-item">
+      <h3 class="categories-title-pomotion">
+        <ion-icon name="ios-cash"></ion-icon> {{'Delivery' | translate}}</h3>
+      <div *ngIf="orderdetailData.shipping">
+        <span class="detail-textHeader">ที่อยู่ : {{orderdetailData.shipping.address}}</span>
+        <span class="detail-textHeader">  ตำบล {{orderdetailData.shipping.subdistrict}} </span>
+        <span class="detail-textHeader"> อำเภอ {{orderdetailData.shipping.district}} </span>
+        <span class="detail-textHeader"> จังหวัด {{orderdetailData.shipping.province}} </span>
+        <span class="detail-textHeader"> รหัสไปรษณีย์ {{orderdetailData.shipping.postcode}} </span>
+      </div>
+    </ion-item>
+
+    <!--<ion-item class="detail-item">
+      <h3 class="categories-title-pomotion">
+        <ion-icon name="md-home"></ion-icon>
+        {{'Shop' | translate}}</h3>
+      <ion-row>
+        <ion-col width-35>
+          <span class="detail-textHeader">{{orderdetailData.items.product.shop.name}}</span>
+        </ion-col>
+        <ion-col width-65 text-right>
+          <rating [(ngModel)]="orderdetailData.items.product.shop.rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false"></rating>
+        </ion-col>
+      </ion-row>
+    </ion-item>-->
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <!--<ion-row>
+    <ion-col>
+    </ion-col>
+  </ion-row>-->
+  <button ion-button block *ngIf="orderdetailData.status !== 'return'" (click)="updateStatus(orderdetailData.status)">{{orderdetailData.status === 'waiting' ? 'Accept' : orderdetailData.status === 'accept' ? 'Sent': orderdetailData.status === 'sent' ? 'Complete':'Progress..'}}</button>
+  <button ion-button block color="danger" *ngIf="orderdetailData.status === 'waiting'" (click)="updateStatusReject()">Reject</button>
+</ion-footer>

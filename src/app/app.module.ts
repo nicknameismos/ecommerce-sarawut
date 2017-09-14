@@ -135,6 +135,10 @@ import { NotificationPage } from '../pages/notification/notification';
 import { OrderServiceProvider } from '../pages/order/order.service';
 import { IonOrdersComponent } from '../components/ion-orders/ion-orders';
 import { SegmentOrderComponent } from '../components/segment-order/segment-order';
+import { ListOrderComponent } from '../components/list-order/list-order';
+import { OrderDetailPage } from "../pages/order-detail/order-detail";
+import { OrderdetailserviceProvider } from "../pages/order-detail/order-detail.service";
+
 // import { RegisterServiceProvider } from "../pages/checkout/";
 
 export function createTranslateLoader(http: Http) {
@@ -209,7 +213,9 @@ export function createTranslateLoader(http: Http) {
     OrderPage,
     NotificationPage,
     IonOrdersComponent,
-    SegmentOrderComponent
+    SegmentOrderComponent,
+    ListOrderComponent,
+    OrderDetailPage
   ],
   imports: [
     BrowserModule,
@@ -257,7 +263,8 @@ export function createTranslateLoader(http: Http) {
     HelpPage,
     FormAddressPage,
     OrderPage,
-    NotificationPage
+    NotificationPage,
+    OrderDetailPage
   ],
   providers: [
     HomeService,
@@ -301,7 +308,8 @@ export function createTranslateLoader(http: Http) {
     PolicyServiceProvider,
     HelpServiceProvider,
     ProductFormServiceProvider,
-    OrderServiceProvider
+    OrderServiceProvider,
+    OrderdetailserviceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

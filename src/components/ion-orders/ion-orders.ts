@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the IonOrdersComponent component.
@@ -11,7 +11,8 @@ import { Component } from '@angular/core';
   templateUrl: 'ion-orders.html'
 })
 export class IonOrdersComponent {
-
+  @Input() channel: any;
+  @Input() steps:Array<any>;
   text: string;
 
   constructor() {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrderModel } from "../order/order.model";
 import { OrderServiceProvider } from "./order.service";
-
+import { OrderDetailPage } from '../../pages/order-detail/order-detail';
 /**
  * Generated class for the OrderPage page.
  *
@@ -50,5 +50,9 @@ export class OrderPage {
     })
   }
 
-
+  selectedItem(e) {
+    console.log(e);
+    this.navCtrl.push(OrderDetailPage, { items: e });
+    // alert(e);
+  }
 }

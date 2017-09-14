@@ -1,0 +1,23 @@
+<!-- Generated template for the ListOrderComponent component -->
+<div *ngIf="items">
+  <div>
+    <div *ngFor="let item of items; let i = index">
+      <ion-list (click)="selectOrder(item.order_id,item.item_id)">
+        <ion-item>
+          <ion-row>
+            <ion-col no-padding width-33 class="magin-right-10-custom">
+              <preload-image [ratio]="{w:1, h:1}" [src]="item.image"></preload-image>
+            </ion-col>
+            <ion-col *ngIf="item.status === status">
+              <!--<h3 class="h3-name">Doc No. {{itm._id}}</h3>-->
+              <p>{{item.name}}</p>
+              <p>{{item.qty}} qty</p>
+              <p class="color-orenge-custom">{{item.price | number}} Baht</p>
+              <p text-right class="color-green-custom">{{item.status}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>
