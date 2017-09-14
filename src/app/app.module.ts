@@ -135,6 +135,16 @@ import { NotificationPage } from '../pages/notification/notification';
 import { ImagesLayoutUploadXComponent } from '../components/images-layout-upload-x/images-layout-upload-x';
 import { ShopFormServiceProvider } from '../pages/shop-form/shop-form.service';
 import { Base64 } from '@ionic-native/base64';
+
+import { OrderServiceProvider } from '../pages/order/order.service';
+import { IonOrdersComponent } from '../components/ion-orders/ion-orders';
+import { SegmentOrderComponent } from '../components/segment-order/segment-order';
+import { ListOrderComponent } from '../components/list-order/list-order';
+import { OrderDetailPage } from "../pages/order-detail/order-detail";
+import { OrderdetailserviceProvider } from "../pages/order-detail/order-detail.service";
+
+import { NotificationserviceProvider } from '../pages/notification/notification.service';
+import { ListNotificationComponent } from '../components/list-notification/list-notification';
 // import { RegisterServiceProvider } from "../pages/checkout/";
 
 export function createTranslateLoader(http: Http) {
@@ -208,7 +218,12 @@ export function createTranslateLoader(http: Http) {
     FormAddressPage,
     OrderPage,
     NotificationPage,
-    ImagesLayoutUploadXComponent
+    ImagesLayoutUploadXComponent,
+    IonOrdersComponent,
+    SegmentOrderComponent,
+    ListOrderComponent,
+    OrderDetailPage,
+    ListNotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -256,7 +271,8 @@ export function createTranslateLoader(http: Http) {
     HelpPage,
     FormAddressPage,
     OrderPage,
-    NotificationPage
+    NotificationPage,
+    OrderDetailPage
   ],
   providers: [
     HomeService,
@@ -301,7 +317,10 @@ export function createTranslateLoader(http: Http) {
     HelpServiceProvider,
     ProductFormServiceProvider,
     ShopFormServiceProvider,
-    Base64
+    Base64,
+    OrderServiceProvider,
+    OrderdetailserviceProvider,
+    NotificationserviceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

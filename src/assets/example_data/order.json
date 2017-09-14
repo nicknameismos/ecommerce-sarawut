@@ -1,0 +1,90 @@
+{
+    "waiting": [
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder",
+            "price": 1234,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "waiting"
+        },
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder",
+            "price": 1234,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "waiting"
+        }
+    ],
+    "accept": [
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder1",
+            "price": 599,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "accept"
+        },
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder1",
+            "price": 599,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "accept"
+        }
+    ],
+    "sent": [
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder2",
+            "price": 899,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "sent"
+        },
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder2",
+            "price": 899,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "sent"
+        }
+    ],
+    "return": [
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder3",
+            "price": 2500,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "return"
+        },
+        {
+            "order_id": "59af742be20930c8298b14f9",
+            "item_id": "59af742be20930c8298b14f9",
+            "name": "Productmaster getorder3",
+            "price": 2500,
+            "qty": 3,
+            "rate": 5,
+            "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+            "status": "return"
+        }
+    ]
+}

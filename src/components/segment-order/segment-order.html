@@ -1,0 +1,13 @@
+<!-- Generated template for the SegmentOrderComponent component -->
+<div *ngIf="parent.channel == 1">
+  <list-order [items]="items.waiting" [status]="'waiting'" (itemClicked)="getItem($event)" (click)="getOrder()"></list-order>
+</div>
+<div *ngIf="parent.channel == 2">
+  <list-order [items]="items.accept" [status]="'accept'" (itemClicked)="getItem($event)" (click)="getOrder()"></list-order>
+</div>
+<div *ngIf="parent.channel == 3">
+  <list-order [items]="items.sent" [status]="'sent'" (itemClicked)="getItem($event)" (click)="getOrder()"></list-order>
+</div>
+<div *ngIf="parent.channel == 4">
+  <list-order [items]="items.return" [status]="'return'" (itemClicked)="getItem($event)" (click)="getOrder()"></list-order>
+</div>

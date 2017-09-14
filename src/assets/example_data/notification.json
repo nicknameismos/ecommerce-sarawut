@@ -1,0 +1,30 @@
+{
+    "title": "Notification List",
+    "items": [{
+            "name": "Crossfit WorldWide Event",
+            "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
+            "price": 1800,
+            "normalprice": 20000,
+            "discount": 10,
+            "discounttype": "%",
+            "currency": "THB",
+            "rate": 5,
+            "description": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement.",
+            "question": "สามารถซื้อสินค้าได้จากที่ไหน",
+            "questionname": "jigkoh"
+        },
+        {
+            "name": "Crossfit WorldWide Event",
+            "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
+            "price": 1800,
+            "normalprice": 20000,
+            "discount": 10,
+            "discounttype": "%",
+            "currency": "THB",
+            "rate": 5,
+            "description": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement.",
+            "question": "สามารถซื้อสินค้าได้จากที่ไหน",
+            "questionname": "jigkoh post"
+        }
+    ]
+}

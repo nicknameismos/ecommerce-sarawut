@@ -1,0 +1,35 @@
+{
+  "order_id": "59af742be20930c8298b14f9",
+  "item_id": "59af742be20930c8298b14f9",
+  "name": "Productmaster getorder",
+  "price": 1234,
+  "qty": 3,
+  "rate": 5,
+  "images": [
+    "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg"
+  ],
+  "status": "waiting",
+  "shipping": {
+    "_id": "59af742ae20930c8298b14ee",
+    "firstname": "getorder",
+    "lastname": "getorder",
+    "tel": "tel",
+    "address": "getorder",
+    "subdistrict": "subdistrict",
+    "district": "district",
+    "province": "province",
+    "postcode": "postcode",
+    "__v": 0,
+    "created": "2017-09-06T04:06:02.173Z"
+  },
+  "delivery": {
+    "_id": "59af742ae20930c8298b14f2",
+    "name": "ส่งธรรมดา",
+    "detail": "ส่งธรรมดาผ่านไปรษณีย์ (ฟรี)",
+    "days": 7,
+    "price": 0,
+    "user": "59af742ae20930c8298b14f1",
+    "__v": 0,
+    "created": "2017-09-06T04:06:02.178Z"
+  }
+}

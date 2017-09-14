@@ -1,24 +1,17 @@
-import { ProductItemModel } from "../../app/app.model";
-import { ShopItemModel } from "../../app/app.model";
-
-export class HomeCategoryModel {
-  categories: Array<HomeModel>;
-}
-
 export class HomeModel {
-  name: string;
-  popularproducts: Array<ProductItemModel>;
-  bestseller: Array<ProductItemModel>;
-  lastvisit: Array<ProductItemModel>;
-  popularshops: Array<ShopItemModel>;
-  productvoucher: Array<VoucherModel>;
-  shopvoucher: Array<VoucherModel>;
-}
+  waiting: Array<Order>;
+  accept: Array<Order>;
+  sent: Array<Order>;
+  return: Array<Order>;
 
-export class VoucherModel {
-  _id: string;
+}
+export class Order {
+  order_id: string;
+  item_id: string;
   name: string;
+  price: number;
+  qty: number;
+  rate: number;
   image: string;
+  status: string;
 }
-
-

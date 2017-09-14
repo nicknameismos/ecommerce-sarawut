@@ -1,0 +1,47 @@
+list-notification {
+    ul {
+        padding: 0px;
+        margin-top: 0px;
+        &.rating li {
+            padding: 0px 0px !important;
+            background: none;
+            color: #ffb400;
+            ion-icon {
+                font-size: 20px;
+            }
+        }
+    }
+    .h3-name {
+        color: #ae75e7;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .p-name {
+        color: #000000;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 14em;
+    }
+    .color-orenge-custom {
+        color: #ff5722;
+    }
+    .color-gold-custom {
+        color: gold;
+    }
+    .text-decoration {
+        text-decoration: line-through;
+    }
+    .filter-bar {
+        background-color: #fff;
+        margin-bottom: 6px;
+        padding: 10px;
+    }
+}
+
+.magin-right-10-custom {
+    margin-right: 10px;
+}

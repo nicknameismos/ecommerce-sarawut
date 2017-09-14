@@ -1,374 +1,90 @@
 {
-  "categories": [
-    {
-      "name": "ไฮไลท์",
-      "popularproducts": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+  "waiting": [
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder",
+          "price": 1234,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "waiting"
+      },
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder",
+          "price": 1234,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "waiting"
+      }
+  ],
+  "accept": [
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder1",
+          "price": 599,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "accept"
+      },
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder1",
+          "price": 599,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "accept"
+      }
+  ],
+  "sent": [
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder2",
+          "price": 899,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "popularshops": [
-        {
-          "_id": "1",
-          "name": "NIKE",
-          "image": "https://assets.wired.com/photos/w_1534/wp-content/uploads/2016/09/ff_nike-hyperadapt_angle_front.jpg"
-        },
-        {
-          "_id": "2",
-          "name": "ADIDAS",
-          "image": "http://th-live-01.slatic.net/p/7/adidas-men-run-shoe-duramo8-bb4656-2290-1493865078-91437671-31f932a8c992f98dc9ba8c6b4dec3f6e-catalog_233.jpg"
-        },
-        {
-          "_id": "3",
-          "name": "PUMA",
-          "image": "http://gadgets.siamsport.co.th/wp-content/uploads/puma-nrgy-sneakers.jpg"
-        },
-        {
-          "_id": "4",
-          "name": "ONITSUKA",
-          "image": "https://th-live-02.slatic.net/p/7/onitsuka-tiger-womens-serrano-shoes-d471l-1494928131-7120789-b60f98a3253f8a5230b4a0cf110588e1.jpg"
-        }
-      ],
-      "bestseller": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "sent"
+      },
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder2",
+          "price": 899,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "sent"
+      }
+  ],
+  "return": [
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder3",
+          "price": 2500,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "return"
+      },
+      {
+          "order_id": "59af742be20930c8298b14f9",
+          "item_id": "59af742be20930c8298b14f9",
+          "name": "Productmaster getorder3",
+          "price": 2500,
+          "qty": 3,
           "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "lastvisit": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "productvoucher": [
-        {
-          "_id": "1",
-          "name": "voucher1",
-          "image": "https://www.iphone-droid.net/wp-content/uploads/2017/03/Lazada-Promotion-1.jpg"
-        },
-        {
-          "_id": "2",
-          "name": "voucher2",
-          "image": "http://news.siamphone.com/upload/news/nw30365/01.jpg"
-        },
-        {
-          "_id": "3",
-          "name": "voucher3",
-          "image": "https://bookings.co.th/wp-content/uploads/Lazada-Birthday-Sale-%E0%B8%9B%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B9%88-5-%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%82%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99-%E0%B8%88%E0%B8%B1%E0%B8%94-21-23-%E0%B8%A1%E0%B8%B5.%E0%B8%84.2017.png"
-        }
-      ],
-      "shopvoucher": [
-        {
-          "_id": "4",
-          "name": "voucher4",
-          "image": "https://www.iphone-droid.net/wp-content/uploads/2017/03/Lazada-Promotion-1.jpg"
-        },
-        {
-          "_id": "5",
-          "name": "voucher5",
-          "image": "http://news.siamphone.com/upload/news/nw30365/01.jpg"
-        },
-        {
-          "_id": "6",
-          "name": "voucher6",
-          "image": "https://bookings.co.th/wp-content/uploads/Lazada-Birthday-Sale-%E0%B8%9B%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B9%88-5-%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%82%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99-%E0%B8%88%E0%B8%B1%E0%B8%94-21-23-%E0%B8%A1%E0%B8%B5.%E0%B8%84.2017.png"
-        }
-      ]
-    },
-    {
-      "name": "แฟชั่น",
-      "popularproducts": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "popularshops": [
-        {
-          "_id": "1",
-          "name": "NIKE",
-          "image": "https://assets.wired.com/photos/w_1534/wp-content/uploads/2016/09/ff_nike-hyperadapt_angle_front.jpg"
-        },
-        {
-          "_id": "2",
-          "name": "ADIDAS",
-          "image": "http://th-live-01.slatic.net/p/7/adidas-men-run-shoe-duramo8-bb4656-2290-1493865078-91437671-31f932a8c992f98dc9ba8c6b4dec3f6e-catalog_233.jpg"
-        },
-        {
-          "_id": "3",
-          "name": "PUMA",
-          "image": "http://gadgets.siamsport.co.th/wp-content/uploads/puma-nrgy-sneakers.jpg"
-        },
-        {
-          "_id": "4",
-          "name": "ONITSUKA",
-          "image": "https://th-live-02.slatic.net/p/7/onitsuka-tiger-womens-serrano-shoes-d471l-1494928131-7120789-b60f98a3253f8a5230b4a0cf110588e1.jpg"
-        }
-      ],
-      "bestseller": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "lastvisit": [
-        {
-          "_id": "1",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "2",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "3",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "4",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        },
-        {
-          "_id": "5",
-          "name": "Crossfit WorldWide Event",
-          "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-          "price": 1800,
-          "rate": 5,
-          "detail": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-        }
-      ],
-      "productvoucher": [
-        {
-          "_id": "1",
-          "name": "voucher1",
-          "image": "https://www.iphone-droid.net/wp-content/uploads/2017/03/Lazada-Promotion-1.jpg"
-        },
-        {
-          "_id": "2",
-          "name": "voucher2",
-          "image": "http://news.siamphone.com/upload/news/nw30365/01.jpg"
-        },
-        {
-          "_id": "3",
-          "name": "voucher3",
-          "image": "https://bookings.co.th/wp-content/uploads/Lazada-Birthday-Sale-%E0%B8%9B%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B9%88-5-%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%82%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99-%E0%B8%88%E0%B8%B1%E0%B8%94-21-23-%E0%B8%A1%E0%B8%B5.%E0%B8%84.2017.png"
-        }
-      ],
-      "shopvoucher": [
-        {
-          "_id": "4",
-          "name": "voucher4",
-          "image": "https://www.iphone-droid.net/wp-content/uploads/2017/03/Lazada-Promotion-1.jpg"
-        },
-        {
-          "_id": "5",
-          "name": "voucher5",
-          "image": "http://news.siamphone.com/upload/news/nw30365/01.jpg"
-        },
-        {
-          "_id": "6",
-          "name": "voucher6",
-          "image": "https://bookings.co.th/wp-content/uploads/Lazada-Birthday-Sale-%E0%B8%9B%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B9%88-5-%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%82%E0%B8%A1%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99-%E0%B8%88%E0%B8%B1%E0%B8%94-21-23-%E0%B8%A1%E0%B8%B5.%E0%B8%84.2017.png"
-        }
-      ]
-    }
+          "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
+          "status": "return"
+      }
   ]
 }
