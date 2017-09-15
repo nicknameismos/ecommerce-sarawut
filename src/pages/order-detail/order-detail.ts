@@ -22,9 +22,9 @@ export class OrderDetailPage {
   statusTab: string = '';
   selectedItem: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public orderdetailserviceProvider: OrderdetailserviceProvider, public alertCtrl: AlertController, public loading: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public orderdetailserviceProvider: OrderdetailserviceProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
     this.selectedItem = navParams.get('item');
-    this.orderdetailData =  this.selectedItem ;
+    this.orderdetailData = this.selectedItem;
     this.orderID = this.selectedItem.order_id;
     this.itemID = this.selectedItem.item_id;
   }
@@ -57,9 +57,13 @@ export class OrderDetailPage {
         {
           text: 'Submit',
           handler: data => {
+            let loadingCtrl = this.loadingCtrl.create();
+            loadingCtrl.present();
             this.orderdetailserviceProvider.updateStatusSent(this.selectedItem).then((data) => {
+              loadingCtrl.dismiss();
               this.navCtrl.pop();
             }, (err) => {
+              loadingCtrl.dismiss();
               console.log(err);
             });
           }
@@ -72,33 +76,49 @@ export class OrderDetailPage {
   updateStatus(status) {
     var updateStatus = '';
     if (status === 'waiting') {
+      let loadingCtrl = this.loadingCtrl.create();
+      loadingCtrl.present();
       this.orderdetailserviceProvider.updateStatusAccept(this.selectedItem).then((data) => {
+        loadingCtrl.dismiss();
         this.navCtrl.pop();
       }, (err) => {
+        loadingCtrl.dismiss();
         console.log(err);
       });
     } else if (status === 'accept') {
       this.showPrompt();
     } else if (status === 'sent') {
+      let loadingCtrl = this.loadingCtrl.create();
+      loadingCtrl.present();
       this.orderdetailserviceProvider.updateStatusComplete(this.selectedItem).then((data) => {
+        loadingCtrl.dismiss();
         this.navCtrl.pop();
       }, (err) => {
+        loadingCtrl.dismiss();
         console.log(err);
       });
     }
     else if (status === 'return') {
+      let loadingCtrl = this.loadingCtrl.create();
+      loadingCtrl.present();
       this.orderdetailserviceProvider.updateStatusReturn(this.selectedItem).then((data) => {
+        loadingCtrl.dismiss();
         this.navCtrl.pop();
       }, (err) => {
+        loadingCtrl.dismiss();
         console.log(err);
       });
     }
   }
 
   updateStatusReject() {
+    let loadingCtrl = this.loadingCtrl.create();
+    loadingCtrl.present();
     this.orderdetailserviceProvider.updateStatusReject(this.selectedItem).then((data) => {
+      loadingCtrl.dismiss();
       this.navCtrl.pop();
     }, (err) => {
+      loadingCtrl.dismiss();
       console.log(err);
     });
   }

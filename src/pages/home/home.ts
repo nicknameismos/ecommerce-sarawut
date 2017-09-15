@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, LoadingController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import { HomeService } from "./home.service";
 import { HomeModel } from "../home/home.model";
@@ -33,7 +33,7 @@ export class HomePage {
   lineChart: any;
   user: any;
   // shop: ShopModel = new ShopModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public homeService: HomeService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public homeService: HomeService, public loadingCtrl: LoadingController) {
 
     this.user = navParams.get('data');
 
@@ -44,7 +44,10 @@ export class HomePage {
     // console.log(this.shop);
     // this.shop
     console.log('ionViewDidLoad HomePage');
+    let loadingCtrl = this.loadingCtrl.create();
+    loadingCtrl.present();
     this.homeService.getData().then(data => {
+      loadingCtrl.dismiss();
       this.homeData = data;
       this.waiting = data.waiting.length;
       this.accept = data.accept.length;

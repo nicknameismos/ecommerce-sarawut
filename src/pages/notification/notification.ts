@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { NotificationModel } from './notification.model';
 import { NotificationserviceProvider } from "../notification/notification.service";
 import { ProductDetailPage } from '../product-detail/product-detail';
@@ -20,7 +20,8 @@ export class NotificationPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-  public notificationServiceProvider : NotificationserviceProvider) {
+    public notificationServiceProvider: NotificationserviceProvider,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -28,7 +29,10 @@ export class NotificationPage {
     this.getData();
   }
   getData() {
+    let loadingCtrl = this.loadingCtrl.create();
+    loadingCtrl.present();
     this.notificationServiceProvider.getNotification().then(data => {
+      loadingCtrl.dismiss();
       this.notification = data;
     })
   }

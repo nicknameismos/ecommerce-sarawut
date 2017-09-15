@@ -1,4 +1,19 @@
 list-order {
+    .list{
+        margin-bottom: 1px;
+    }
+    ul {
+        padding: 0px;
+        margin-top:0px;
+        &.rating li {
+            padding: 0px 0px !important;
+            background: none;
+            color: #ffb400;
+            ion-icon {
+                font-size: 20px;
+            }
+        }
+    }
     .magin-right-10-custom {
         margin-right: 10px;
     }
@@ -17,5 +32,11 @@ list-order {
     }
     .color-green-custom {
         color: #137911;
+    }
+    .color-gray-custom {
+        color: gray;
+    }
+    .text-show-price {
+        font-weight: bold;                   
     }
 }

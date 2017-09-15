@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { OrderModel } from "../order/order.model";
 import { OrderServiceProvider } from "./order.service";
 import { OrderDetailPage } from '../../pages/order-detail/order-detail';
@@ -36,7 +36,7 @@ export class OrderPage {
       title: "Return"
     }
   ];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public orderServiceProvider: OrderServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public orderServiceProvider: OrderServiceProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -44,7 +44,10 @@ export class OrderPage {
     this.getOrder();
   }
   getOrder() {
+    let loadingCtrl = this.loadingCtrl.create();
+    loadingCtrl.present();
     this.orderServiceProvider.getData().then(data => {
+      loadingCtrl.dismiss();
       this.orderlistData = data;
       console.log(this.orderlistData);
     })

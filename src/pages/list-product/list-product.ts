@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController ,LoadingController} from 'ionic-angular';
 import { ListProductServiceProvider } from '../list-product/list-product.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 import { ProductDetailPage } from "../product-detail/product-detail";
@@ -20,7 +20,7 @@ import { ProductFormPage } from "../product-form/product-form";
 export class ListProductPage {
   // listProductData: Array<ProductItemModel>;
   listProductData: ListProductViewModel = new ListProductViewModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public listProductService: ListProductServiceProvider, public log: LogServiceProvider, public modalCtrl: ModalController, public listProductServiceProvider: ListProductServiceProvider
+  constructor(public navCtrl: NavController, public navParams: NavParams, public listProductService: ListProductServiceProvider, public log: LogServiceProvider, public modalCtrl: ModalController, public listProductServiceProvider: ListProductServiceProvider,public loadingCtrl: LoadingController
   ) {
   }
 
@@ -36,9 +36,13 @@ export class ListProductPage {
     this.getListProduct();
   }
   getListProduct() {
+    let loadingCtrl = this.loadingCtrl.create();
+    loadingCtrl.present();
     this.listProductService.getProductList().then(data => {
+      loadingCtrl.dismiss();
       this.listProductData = data;
     }, (err) => {
+      loadingCtrl.dismiss();
       this.log.error(err);
     })
   }
@@ -66,10 +70,14 @@ export class ListProductPage {
     let modal = this.modalCtrl.create(ProductFormPage);
     modal.onDidDismiss((data) => {
       console.log(data);
+      let loadingCtrl = this.loadingCtrl.create();
+      loadingCtrl.present();
       this.listProductServiceProvider.postProduct(data.data).then((res) => {
+        loadingCtrl.dismiss();
         console.log('OK');
         this.getListProduct();
       }, (error) => {
+        loadingCtrl.dismiss();
         console.error(error);
       })
     })
