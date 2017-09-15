@@ -2,7 +2,7 @@
 <div *ngIf="items">
   <div>
     <div *ngFor="let item of items; let i = index">
-      <ion-list (click)="selectOrder(item.order_id,item.item_id)">
+      <ion-list (click)="selectOrder(item)">
         <ion-item>
           <ion-row>
             <ion-col no-padding width-33 class="magin-right-10-custom">

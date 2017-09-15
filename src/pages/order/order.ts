@@ -52,7 +52,7 @@ export class OrderPage {
 
   selectedItem(e) {
     console.log(e);
-    this.navCtrl.push(OrderDetailPage, { items: e });
+    this.navCtrl.push(OrderDetailPage, { item: e });
     // alert(e);
   }
   doRefresh(refresher) {

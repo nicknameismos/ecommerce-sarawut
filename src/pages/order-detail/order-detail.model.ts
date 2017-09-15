@@ -5,7 +5,7 @@ export class OrderDetailModel {
     price: number;
     qty: number;
     rate: number;
-    image: Array<Image>;
+    image: string;
     status: string;
     shipping: Shipping = new Shipping();
     delivery: Delivery = new Delivery();

@@ -17,21 +17,24 @@ import { OrderDetailModel } from "./order-detail.model";
 export class OrderDetailPage {
   orderID: any;
   itemID: any;
-  orderdetailData: OrderDetailModel = new OrderDetailModel;
+  orderdetailData: OrderDetailModel = new OrderDetailModel();
   indexItem: any = 0;
   statusTab: string = '';
+  selectedItem: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public orderdetailserviceProvider: OrderdetailserviceProvider, public alertCtrl: AlertController, public loading: LoadingController) {
-    this.orderID = navParams.get('order_id');
-    this.itemID = navParams.get('item_id');
+    this.selectedItem = navParams.get('item');
+    this.orderdetailData =  this.selectedItem ;
+    this.orderID = this.selectedItem.order_id;
+    this.itemID = this.selectedItem.item_id;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderDetailPage');
-    this.orderdetailserviceProvider.getData(this.orderID,this.itemID).then(data => {
-      this.orderdetailData = data;
-      console.log(data);
-    })
+    // this.orderdetailserviceProvider.getData(this.selectedItem.order_id).then(data => {
+    //   this.orderdetailData = data;
+    //   console.log(data);
+    // })
   }
 
   showPrompt() {
@@ -54,8 +57,11 @@ export class OrderDetailPage {
         {
           text: 'Submit',
           handler: data => {
-            this.orderdetailData.status = 'sent';
-            this.updateOrder(this.orderdetailData);
+            this.orderdetailserviceProvider.updateStatusSent(this.selectedItem).then((data) => {
+              this.navCtrl.pop();
+            }, (err) => {
+              console.log(err);
+            });
           }
         }
       ]
@@ -66,50 +72,37 @@ export class OrderDetailPage {
   updateStatus(status) {
     var updateStatus = '';
     if (status === 'waiting') {
-      updateStatus = 'accept';
+      this.orderdetailserviceProvider.updateStatusAccept(this.selectedItem).then((data) => {
+        this.navCtrl.pop();
+      }, (err) => {
+        console.log(err);
+      });
     } else if (status === 'accept') {
-      updateStatus = 'sent';
-    } else if (status === 'sent') {
-      updateStatus = 'complete';
-    } else {
-      updateStatus = status;
-    }
-    if (status === 'accept') {
       this.showPrompt();
-    } else {
-      this.orderdetailData.status = updateStatus;
-      console.log(this.orderdetailData);
-      this.updateOrder(this.orderdetailData);
+    } else if (status === 'sent') {
+      this.orderdetailserviceProvider.updateStatusComplete(this.selectedItem).then((data) => {
+        this.navCtrl.pop();
+      }, (err) => {
+        console.log(err);
+      });
     }
-
-    // this.orderdetailserviceProvider
-    //   .updateStatusOrder(this.orderdetailData)
-    //   .then((data) => {
-    //     this.navCtrl.pop();
-    //   }, (err) => {
-    //     console.log(err);
-    //   });
+    else if (status === 'return') {
+      this.orderdetailserviceProvider.updateStatusReturn(this.selectedItem).then((data) => {
+        this.navCtrl.pop();
+      }, (err) => {
+        console.log(err);
+      });
+    }
   }
 
   updateStatusReject() {
-    this.orderdetailData.status = 'reject';
-    // console.log(this.orderdetailData);
-    // this.updateOrder(this.orderdetailData);
+    this.orderdetailserviceProvider.updateStatusReject(this.selectedItem).then((data) => {
+      this.navCtrl.pop();
+    }, (err) => {
+      console.log(err);
+    });
   }
 
-  updateOrder(data) {
-    console.log(this.orderdetailData);
-    let loading = this.loading.create();
-    loading.present();
-    this.orderdetailserviceProvider
-      .updateStatusOrder(this.orderdetailData, this.orderdetailData)
-      .then((data) => {
-        this.navCtrl.pop();
-        loading.dismiss();
-      }, (err) => {
-        console.log(err);
-        loading.dismiss();
-      });
-  }
+
 
 }
