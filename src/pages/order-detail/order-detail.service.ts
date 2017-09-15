@@ -15,22 +15,34 @@ export class OrderdetailserviceProvider {
   constructor(public http: Http) {
     console.log('Hello OrderdetailserviceProvider Provider');
   }
-  getData(orderID, itemID): Promise<OrderDetailModel> {
-    return this.http.get('./assets/example_data/orderdetail.json')
+  updateStatusAccept(item): Promise<OrderDetailModel> {
+    return this.http.put('https://greenvintage-v1.herokuapp.com/api/updateorderaccept/' + item.order_id, item)
       .toPromise()
       .then(resp => resp.json() as OrderDetailModel)
       .catch(err => Promise.reject(err.message || err));
-
-
   }
-
-  updateStatusOrder(order, item): Promise<OrderDetailModel> {
-    return this.http.put('https://greenvintage.herokuapp.com/api/ordermasters/' + order._id, item)
+  updateStatusReject(item): Promise<OrderDetailModel> {
+    return this.http.put('https://greenvintage-v1.herokuapp.com/api/updateorderreject/' + item.order_id, item)
       .toPromise()
       .then(resp => resp.json() as OrderDetailModel)
       .catch(err => Promise.reject(err.message || err));
-
-
   }
-
+  updateStatusSent(item): Promise<OrderDetailModel> {
+    return this.http.put('https://greenvintage-v1.herokuapp.com/api/updateordersent/' + item.order_id, item)
+      .toPromise()
+      .then(resp => resp.json() as OrderDetailModel)
+      .catch(err => Promise.reject(err.message || err));
+  }
+  updateStatusComplete(item): Promise<OrderDetailModel> {
+    return this.http.put('https://greenvintage-v1.herokuapp.com/api/updateordercomplete/' + item.order_id, item)
+      .toPromise()
+      .then(resp => resp.json() as OrderDetailModel)
+      .catch(err => Promise.reject(err.message || err));
+  }
+  updateStatusReturn(item): Promise<OrderDetailModel> {
+    return this.http.put('https://greenvintage-v1.herokuapp.com/api/updateorderreturn/' + item.order_id, item)
+      .toPromise()
+      .then(resp => resp.json() as OrderDetailModel)
+      .catch(err => Promise.reject(err.message || err));
+  }
 }

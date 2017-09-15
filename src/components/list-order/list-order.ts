@@ -28,7 +28,7 @@ export class ListOrderComponent {
     this.user = JSON.parse(window.localStorage.getItem('user'));
     // console.log(this.items);
   }
-  selectOrder(item, i) {
+  selectOrder(item) {
     this.data = item;
     // this.navCtrl.push(OrderDetailPage);
     this.itemClicked.emit(this.data);

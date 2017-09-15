@@ -14,7 +14,7 @@
 
 
 <ion-content class="contact-card-content">
-  <topbar [dataTopBar]="orderdetailData"></topbar>
+  <topbarshop [dataTopBar]="orderdetailData"></topbarshop>
 
   <ion-list class="details-list">
     <ion-item class="detail-item">
@@ -45,7 +45,7 @@
         <span class="detail-textHeader">จัดส่ง : {{orderdetailData.delivery.name}}</span>
         <span class="detail-textHeader">  {{orderdetailData.delivery.detail}} </span>
         <span class="detail-textHeader"> ค่าจัดส่ง {{orderdetailData.delivery.price}} บาท</span>
-        <span class="detail-textHeader"> ระยะเวลา {{orderdetailData.delivery.days}} วัน</span>
+        <!-- <span class="detail-textHeader"> ระยะเวลา {{orderdetailData.delivery.days}} วัน</span> -->
 
 
       </div>
@@ -61,28 +61,9 @@
         <span class="detail-textHeader"> รหัสไปรษณีย์ {{orderdetailData.shipping.postcode}} </span>
       </div>
     </ion-item>
-
-    <!--<ion-item class="detail-item">
-      <h3 class="categories-title-pomotion">
-        <ion-icon name="md-home"></ion-icon>
-        {{'Shop' | translate}}</h3>
-      <ion-row>
-        <ion-col width-35>
-          <span class="detail-textHeader">{{orderdetailData.items.product.shop.name}}</span>
-        </ion-col>
-        <ion-col width-65 text-right>
-          <rating [(ngModel)]="orderdetailData.items.product.shop.rate" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
-            starIconName="star" nullable="false"></rating>
-        </ion-col>
-      </ion-row>
-    </ion-item>-->
   </ion-list>
 </ion-content>
 <ion-footer>
-  <!--<ion-row>
-    <ion-col>
-    </ion-col>
-  </ion-row>-->
-  <button ion-button block *ngIf="orderdetailData.status !== 'return'" (click)="updateStatus(orderdetailData.status)">{{orderdetailData.status === 'waiting' ? 'Accept' : orderdetailData.status === 'accept' ? 'Sent': orderdetailData.status === 'sent' ? 'Complete':'Progress..'}}</button>
+  <button ion-button block *ngIf="orderdetailData.status !== 'return'" (click)="updateStatus(orderdetailData.status)">{{orderdetailData.status === 'waiting' ? 'Accept' : orderdetailData.status === 'accept' ? 'Sent': orderdetailData.status === 'sent' ? 'Complete':'Return'}}</button>
   <button ion-button block color="danger" *ngIf="orderdetailData.status === 'waiting'" (click)="updateStatusReject()">Reject</button>
 </ion-footer>
