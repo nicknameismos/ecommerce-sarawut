@@ -75,4 +75,12 @@ export class ListProductPage {
     })
     modal.present();
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getListProduct();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 }

@@ -55,4 +55,12 @@ export class OrderPage {
     this.navCtrl.push(OrderDetailPage, { items: e });
     // alert(e);
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getOrder();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 }

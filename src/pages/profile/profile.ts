@@ -127,4 +127,13 @@ export class ProfilePage {
     this.navCtrl.push(ListShopPage);
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getProfileData();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
 }

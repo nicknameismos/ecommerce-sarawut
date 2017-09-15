@@ -35,5 +35,13 @@ export class NotificationPage {
   selectedItem() {
     this.navCtrl.push(ProductDetailPage);
   }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getData();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 
 }

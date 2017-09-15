@@ -14,6 +14,10 @@
 
 
 <ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-orders [steps]="steps" [(channel)]="channel">
     <segment-order [items]="orderlistData" (SelectedOrder)="selectedItem($event)"></segment-order>
   </ion-orders>
