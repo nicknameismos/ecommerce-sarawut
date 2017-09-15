@@ -1,8 +1,13 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ProfileModel } from '../profile/profile.model';
-import { ProfileServiceProvider } from '../profile/profile.service';
-import { LogServiceProvider } from '../../providers/log-service/log-service';
+import { Component } from "@angular/core";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  ModalController
+} from "ionic-angular";
+import { ProfileModel } from "../profile/profile.model";
+import { ProfileServiceProvider } from "../profile/profile.service";
+import { LogServiceProvider } from "../../providers/log-service/log-service";
 import { AuthorizeProvider } from "../../providers/authorize/authorize";
 import { LoginPage } from "../login/login";
 import { NotificationsPage } from "../notifications/notifications";
@@ -12,7 +17,7 @@ import { SettingPage } from "../setting/setting";
 import { LangaugePage } from "../langauge/langauge";
 import { PolicyPage } from "../policy/policy";
 import { HelpPage } from "../help/help";
-import { ListShopPage } from '../list-shop/list-shop';
+import { ListShopPage } from "../list-shop/list-shop";
 
 /**
  * Generated class for the ProfilePage page.
@@ -22,21 +27,22 @@ import { ListShopPage } from '../list-shop/list-shop';
  */
 @IonicPage()
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: "page-profile",
+  templateUrl: "profile.html"
 })
 export class ProfilePage {
   profileData: ProfileModel = new ProfileModel();
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
     public navParams: NavParams,
     public profileService: ProfileServiceProvider,
     public log: LogServiceProvider,
     public modalCtrl: ModalController,
-    public authorizeProvider: AuthorizeProvider) {
-  }
+    public authorizeProvider: AuthorizeProvider
+  ) {}
 
   ionViewDidLoad() {
-    this.log.info('ionViewDidLoad ProfilePage');
+    this.log.info("ionViewDidLoad ProfilePage");
     this.getProfileData();
   }
 
@@ -54,17 +60,11 @@ export class ProfilePage {
 
   logout() {
     this.authorizeProvider.unAuthorization();
-    window.localStorage.removeItem('cart');
-    this.getUser();
+    // window.localStorage.removeItem("cart");
+    this.getProfileData();
   }
   getProfileData() {
-    this.profileService
-      .getProfile()
-      .then((data) => {
-        this.profileData = data;
-      }, (err) => {
-        this.log.error(err);
-      });
+    this.profileData = this.authorizeProvider.getAuthorization();
   }
 
   notification() {
@@ -128,12 +128,11 @@ export class ProfilePage {
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
+    console.log("Begin async operation", refresher);
     this.getProfileData();
     setTimeout(() => {
-      console.log('Async operation has ended');
+      console.log("Async operation has ended");
       refresher.complete();
     }, 2000);
   }
-
 }
