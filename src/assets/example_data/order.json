@@ -8,7 +8,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "waiting"
+            "status": "waiting",
+            "shipping": {},
+            "delivery": {}
         },
         {
             "order_id": "59af742be20930c8298b14f9",
@@ -18,7 +20,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "waiting"
+            "status": "waiting",
+            "shipping": {},
+            "delivery": {}
         }
     ],
     "accept": [
@@ -30,7 +34,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "accept"
+            "status": "accept",
+            "shipping": {},
+            "delivery": {}
         },
         {
             "order_id": "59af742be20930c8298b14f9",
@@ -40,7 +46,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "accept"
+            "status": "accept",
+            "shipping": {},
+            "delivery": {}
         }
     ],
     "sent": [
@@ -52,7 +60,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "sent"
+            "status": "sent",
+            "shipping": {},
+            "delivery": {}
         },
         {
             "order_id": "59af742be20930c8298b14f9",
@@ -62,7 +72,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "sent"
+            "status": "sent",
+            "shipping": {},
+            "delivery": {}
         }
     ],
     "return": [
@@ -74,7 +86,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "return"
+            "status": "return",
+            "shipping": {},
+            "delivery": {}
         },
         {
             "order_id": "59af742be20930c8298b14f9",
@@ -84,7 +98,9 @@
             "qty": 3,
             "rate": 5,
             "image": "http://www.sportsdirect.com/images/marketing/nikelanding-tainers.jpg",
-            "status": "return"
+            "status": "return",
+            "shipping": {},
+            "delivery": {}
         }
     ]
 }
