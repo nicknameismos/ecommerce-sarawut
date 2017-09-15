@@ -36,14 +36,13 @@ export class HomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public homeService: HomeService) {
 
     this.user = navParams.get('data');
-    
+
   }
 
 
   ionViewDidLoad() {
     // console.log(this.shop);
     // this.shop
-
     console.log('ionViewDidLoad HomePage');
     this.homeService.getData().then(data => {
       this.homeData = data;
@@ -119,8 +118,15 @@ export class HomePage {
 
       });
 
-      
+
     })
   }
-
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.ionViewDidLoad();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 }
