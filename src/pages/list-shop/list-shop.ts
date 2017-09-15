@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { ListShopModel } from '../list-shop/list-shop.model';
-import { ListShopServiceProvider } from '../list-shop/list-shop.service';
-import { LogServiceProvider } from '../../providers/log-service/log-service';
+import { AuthorizeProvider } from "./../../providers/authorize/authorize";
+import { Component } from "@angular/core";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  ModalController
+} from "ionic-angular";
+import { ListShopModel } from "../list-shop/list-shop.model";
+import { ListShopServiceProvider } from "../list-shop/list-shop.service";
+import { LogServiceProvider } from "../../providers/log-service/log-service";
 import { ShopDetailPage } from "../shop-detail/shop-detail";
-import { ShopFormPage } from '../shop-form/shop-form';
+import { ShopFormPage } from "../shop-form/shop-form";
 
 /**
  * Generated class for the ListShopPage page.
@@ -14,25 +20,34 @@ import { ShopFormPage } from '../shop-form/shop-form';
  */
 @IonicPage()
 @Component({
-  selector: 'page-list-shop',
-  templateUrl: 'list-shop.html',
+  selector: "page-list-shop",
+  templateUrl: "list-shop.html"
 })
 export class ListShopPage {
   listShopData: ListShopModel = new ListShopModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public listShopService: ListShopServiceProvider, public log: LogServiceProvider, public modalCtrl: ModalController) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public listShopService: ListShopServiceProvider,
+    public log: LogServiceProvider,
+    public modalCtrl: ModalController,
+    public authorizeProvider: AuthorizeProvider
+  ) {}
 
   ionViewDidLoad() {
-    this.log.info('ionViewDidLoad ListShopPage');
+    this.log.info("ionViewDidLoad ListShopPage");
     this.getListShopData();
   }
   getListShopData() {
-    this.listShopService.getListShop().then((data) => {
-      this.listShopData = data;
-      this.log.info(this.listShopData);
-    }, (err) => {
-      this.log.error(err);
-    });
+    this.listShopService.getListShop().then(
+      data => {
+        this.listShopData = data;
+        this.log.info(this.listShopData);
+      },
+      err => {
+        this.log.error(err);
+      }
+    );
   }
 
   selectShop(e) {
@@ -40,19 +55,27 @@ export class ListShopPage {
   }
   createShop() {
     let modal = this.modalCtrl.create(ShopFormPage);
+    let user = this.authorizeProvider.getAuthorization();
     // Getting data from the modal:
     modal.onDidDismiss(data => {
-      console.log('MODAL DATA', data);
-      this.listShopService.addShop(data)
-        .then((resp) => {
+      console.log("MODAL DATA", data);
+      this.listShopService.addShop(data).then(
+        resp => {
           console.log(resp);
+          user.shops = user.shops ? user.shops : [];
+          user.shops.push(resp);
+          window.localStorage.setItem(
+            "e7e_jjecommerce_buy_user",
+            JSON.stringify(user)
+          );
+          this.authorizeProvider.getAuthorization();
           this.getListShopData();
-        }, (err) => {
+        },
+        err => {
           console.log(err);
-        });
+        }
+      );
     });
     modal.present();
   }
-
-
 }

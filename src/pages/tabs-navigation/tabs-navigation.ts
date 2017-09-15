@@ -45,8 +45,8 @@ export class TabsNavigationPage {
             this.listShopService.addShop(data).then(
               resp => {
                 console.log(resp);
-                user.shop = [];
-                user.shop.push(resp);
+                user.shops = user.shops ? user.shops : [];
+                user.shops.push(resp);
                 window.localStorage.setItem(
                   "e7e_jjecommerce_buy_user",
                   JSON.stringify(user)
