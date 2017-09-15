@@ -69,12 +69,13 @@
                 {{'HELP' | translate}}                                                                
             </button>
     </ion-list>
-    <ion-list class="magin-top-10-bottom-0" *ngIf="profileData">
+    <ion-list class="magin-top-10-bottom-10" *ngIf="profileData">
         <button ion-item (click)="logout()">
                 <ion-icon name="ios-log-out-outline" item-start></ion-icon>
                 {{'LOG_OUT' | translate}}                                                                                
             </button>
     </ion-list>
+   
     <!-- <div class="user-image-content">
             <ion-row no-padding class="user-image-row">
                 <ion-col no-padding width-40>
@@ -112,5 +113,4 @@
     {{'LOG_OUT' | translate }}
   </button> -->
     <!-- </div> -->
-
 </ion-content>
