@@ -67,7 +67,7 @@ export class MyApp {
 
     });
 
-    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     if (user) {
       this.getCartDataService();
     }

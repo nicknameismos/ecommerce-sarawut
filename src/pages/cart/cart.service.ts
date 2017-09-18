@@ -14,7 +14,7 @@ export class CartService {
   }
 
   getData(): Promise<CartViewModel> {
-    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     // return this.http.get('./assets/example_data/cart.json')
     // return this.http.get(Constants.URL + '/api/carts/get-by-user/' + user._id)
     return this.http.get(Constants.URL + '/api/cart/user/' + user._id)
@@ -25,7 +25,7 @@ export class CartService {
   }
 
   updateCartData(cart): Promise<CartViewModel> {
-    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     cart.user = user;
     // return this.http.post(Constants.URL + '/api/carts', cart)
     return this.http.post(Constants.URL + '/api/carts', cart)

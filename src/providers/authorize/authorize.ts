@@ -21,7 +21,7 @@ export class AuthorizeProvider {
   }
 
   isAuthorization() {
-    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     if (!user) {
       // this.loading.present();
       setTimeout(() => {
@@ -35,12 +35,12 @@ export class AuthorizeProvider {
   }
 
   getAuthorization() {
-    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     return user;
   }
 
   unAuthorization() { // logout
-    window.localStorage.removeItem('e7e_jjecommerce_buy_user');
+    window.localStorage.removeItem('e7e_jjecommerce_seller_user');
     return;
   }
 

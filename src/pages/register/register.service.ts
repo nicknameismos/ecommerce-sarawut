@@ -25,7 +25,7 @@ export class RegisterServiceProvider {
       .toPromise()
       .then(response => {
         let data = response.json() as AuthorizeModel;
-        window.localStorage.setItem('e7e_jjecommerce_buy_user', JSON.stringify(data));
+        window.localStorage.setItem('e7e_jjecommerce_seller_user', JSON.stringify(data));
         return data;
       })
       .catch(this.handleError);

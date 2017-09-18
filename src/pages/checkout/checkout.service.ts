@@ -27,7 +27,7 @@ export class CheckoutServiceProvider {
     console.log('Hello CheckoutServiceProvider Provider');
   }
   getData(): Promise<CheckoutModel> {
-    // let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    // let user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     // return this.http.get(Constants.URL + '/api/carts/get-by-user/' + user._id)
     return this.http.get('./assets/example_data/checkout.json')
       .toPromise()

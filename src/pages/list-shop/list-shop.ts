@@ -65,7 +65,7 @@ export class ListShopPage {
           user.shops = user.shops ? user.shops : [];
           user.shops.push(resp);
           window.localStorage.setItem(
-            "e7e_jjecommerce_buy_user",
+            "e7e_jjecommerce_seller_user",
             JSON.stringify(user)
           );
           this.authorizeProvider.getAuthorization();

@@ -41,7 +41,7 @@ export class ProductDetailServiceProvider {
   }
 
   addToCart(product): Promise<ProductDetailModel> {
-    product.selecteduser = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    product.selecteduser = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     return this.http.post(Constants.URL + '/api/carts/add', product)
       .toPromise()
       .then(response => response.json() as ProductDetailModel)
@@ -49,7 +49,7 @@ export class ProductDetailServiceProvider {
   }
 
   addFavorite(id): Promise<ProductDetailModel> {
-    var user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_buy_user'));
+    var user = JSON.parse(window.localStorage.getItem('e7e_jjecommerce_seller_user'));
     var favorite = {
       user: user
     };
